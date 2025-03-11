@@ -1,0 +1,241 @@
+.hidden {
+  display: none;
+}
+
+#appointments-section {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  
+}
+
+.appointments-container {
+  width: 80vw; /* Adjusted width for better fitting */
+  height: auto;
+  margin: 20px auto;
+  padding: 20px; /* Reduced padding */
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  margin-top: 0;
+  border-radius: 1em;
+  /* overflow: hidden; */
+}
+
+/* Search container styling */
+.search-container {
+  position: relative;
+  width: 23%;
+  margin: 12px auto;
+  display: flex;
+  float: left;
+  margin-left: 4em; /* Reduced margin */
+  align-items: center;
+}
+
+/* Search input field styling */
+#search-input {
+  width: 100%;
+  padding: 12px 40px 12px 20px;
+  font-size: 14px; /* Reduced font size */
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  
+  height: 1rem;
+}
+
+#search-input:focus {
+  border: 2px solid #007bff;;
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Search button with icon styling */
+.search-btn {
+  position: absolute; 
+  height:auto; 
+  right: 0;
+  margin-top: 1rem ;
+  padding: 0.6rem;
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  font-size: 16px; /* Adjusted icon size */
+  cursor: pointer;
+}
+
+.search-btn i {
+  transition: color 0.3s ease;
+  
+}
+.search-btn:hover {
+	background-color: transparent;
+}
+.search-btn:hover i {
+  color: red;
+}
+
+.appointments-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #0b1c3b;
+  color: white;
+  margin: 3rem;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+
+  font-size: small;
+}
+
+.appointments-table th,
+.appointments-table td {
+  border: 1px solid white;
+  text-align: center;
+  padding: 8px;
+}
+
+.appointments-table th {
+  background-color: #007bff;
+}
+
+.appointments-table td:nth-child(1),
+.appointments-table th:nth-child(1) {
+  width: 6rem;
+}
+
+.appointments-table td:nth-child(5),
+.appointments-table th:nth-child(5) {
+  width: 18rem; /* Reduced width */
+}
+
+.action-btn {
+  display: block;
+  background-color: #4caf50;
+  width: 6rem;
+  color: white;
+  float: left;
+  padding: 0.4em;
+  /* font-size: medium; Reduced font size */
+  margin-right: 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  border-radius: 3em;
+  /* font-weight: bold; */
+}
+
+.action-btn:hover {
+  background-color: red;
+  color: white;
+  font-size: medium;
+  transition: all 1s ease;
+}
+.update-btn{
+  background-color: #4caf50;
+  width: 6rem;
+  color: white;
+  float: left;
+  padding: 0.4em;
+  /* font-size: medium; Reduced font size */
+  cursor: pointer;
+  border-radius: 3em;
+  /* font-weight: bold; */
+}
+.delete-btn{
+  background-color: #c0392b;
+  width: 6rem;
+  color: white;
+  float: left;
+  padding: 0.4em;
+  /* font-size: medium; Reduced font size */
+  cursor: pointer;
+  border-radius: 3em;
+  /* font-weight: bold; */
+}
+.history-btn{
+  background-color: #007BFF;
+  width: 6rem;
+  color: white;
+  float: left;
+  padding: 0.4em;
+  /* font-size: medium; Reduced font size */
+  cursor: pointer;
+  border-radius: 3em;
+  /* font-weight: bold; */
+}
+
+#add-appointment-btn {
+  width: 11rem; /* Reduced width */
+  margin: 10px auto;
+  margin-left: 3rem; 
+  margin-top: 1.3rem;
+}
+
+/* Media Queries for responsiveness */
+
+/* For 768px screens (Tablet portrait or smaller desktop) */
+@media (max-width: 768px) {
+  .appointments-container {
+    width: 90vw;
+    padding: 15px;
+  }
+
+  .search-container {
+    width: 60%;
+    margin-left: 1.5em;
+  }
+
+  #search-input {
+    font-size: 12px;
+    padding: 8px 25px 8px 10px;
+  }
+
+  .appointments-table {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 12px;
+  }
+
+  #add-appointment-btn {
+    width: 9rem;
+    margin-left: 1.5rem;
+  }
+
+  .action-btn {
+    width: 7rem;
+  }
+}
+
+/* For 480px screens (Mobile) */
+@media (max-width: 480px) {
+  .appointments-container {
+    padding: 10px;
+  }
+
+  .search-container {
+    width: 80%;
+    margin-left: 0;
+  }
+
+  #search-input {
+    font-size: 12px;
+    padding: 8px 20px 8px 10px;
+  }
+
+  .appointments-table {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 10px;
+  }
+
+  #add-appointment-btn {
+    width: 8rem;
+    margin-left: 0;
+  }
+
+  .action-btn {
+    width: 6rem;
+  }
+}

@@ -1,0 +1,159 @@
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+}
+
+/* Profile Card */
+.profile-card {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .info h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profile-card .info h3,
+.profile-card .info p {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-card select,
+.profile-card input,
+.profile-card textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease-in-out;
+    background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  border-radius: 1em;
+}
+
+.profile-card select:focus,
+.profile-card input:focus,
+.profile-card textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.contact-info {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    gap: 0px;
+    
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    margin-bottom: 0;
+    
+}
+
+.contact-info label {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 1rem;
+    display: flex;
+    width: 11rem;
+    
+}
+.info label {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 1rem;
+    display: flex;
+    width: 11rem;
+    
+}
+
+.contact-info input {
+    border-radius: 1em;
+    
+}
+
+.bio {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.bio h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.bio textarea {
+    width: 100%;
+    border-radius: 1em;
+    resize: none;
+}
+
+/* Buttons */
+.save-btn:hover{
+    width: 7rem !important;
+   
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-card .info h1 {
+        font-size: 20px;
+    }
+
+    .profile-card .info h3,
+    .profile-card .info p {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+}

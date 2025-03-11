@@ -1,0 +1,85 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+
+/* Doctor Dashboard */
+#dashboard-section {
+  width: 80vw; /* Adjusted width for better fitting */
+  height: auto;
+  margin: 20px auto;
+  padding: 20px; /* Reduced padding */
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  border-radius: 1em;
+  /* border: 4px solid black; */
+}
+
+
+#dashboard-section h2 {
+  /* font-size: 1.5rem; */
+  color:black;
+  font-weight: bold;
+  /* margin-bottom: 2rem; */
+}
+
+#dashboard-section p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Cards Section */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  /* border: 4px solid red; */
+  height: auto;
+  /* overflow: hidden; */
+
+
+}
+
+.card {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  /* padding: 20px; */
+  border-radius: 3rem;
+  /* flex: 1 1 280px; */
+  width: 15rem !important;
+  /* border: 4px solid red; */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+}
+
+.card h2,
+p {
+  /* font-size: 32px; */
+  /* margin-bottom: 10px; */
+  color: black !important;
+  /* font-weight: bold; */
+}
+
+/* Chart Section */
+.chart-container {
+  width: 100%;
+  height: 70vh;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  
+}

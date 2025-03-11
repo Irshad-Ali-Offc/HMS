@@ -1,0 +1,685 @@
+/* General Reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background-color: #b4b5b6;
+}
+
+.background img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the image */
+  width: 35em; /* Set the size of the watermark */
+  height: 35em;
+  opacity: 0.3; /* Adjust opacity directly */
+  pointer-events: none; /* Ensure it doesn't block user interactions */
+  
+
+}
+
+#doctor-section {
+  padding: 20px;
+  margin-top: 5rem;
+    
+    height: auto;
+    width: 100%;
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+	border-radius: 10px;
+	overflow-x: auto;
+	padding-bottom:50px;
+}
+.department-card{
+	width:25%;
+	float:left;	
+}
+.department-card-body{
+	width:90%;
+	margin:auto;
+	text-align:center;
+	margin-top:20px;
+}
+.department-card-body:hover{
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 1);	
+	border-radius: 4px;
+	color:#027AFD;
+}
+.card-text{
+	padding-left:10px;
+	padding-bottom:20px;	
+}
+.line-height{
+	line-height:4px;
+		
+}
+.text-decoration{
+	text-decoration:none;	
+}
+.text-dark{
+	color:black;	
+}
+/* Layout */
+.dashboard-container {
+  display: flex;
+  margin-left: 25%;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #0b1c3b;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  transform: translateX(0); /* Initially visible */
+    transition: transform 0.3s ease;
+  z-index: 3;
+  left: 0;
+  top: 0;
+}
+.sidebar.visible {
+  transform: translateX(0);
+}
+
+.sidebar h2 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  color: white;
+}
+
+.sidebar p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: white;
+}
+
+.profile-picture img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-top: 10px;
+  
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+
+  display: block;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.7s;
+  background-color: #007bff;
+  color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul li a:hover {
+  background-color: #bd3636;
+}
+/* Toggle Button Styling */
+.toggle-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 1rem;
+  /* background-color: #333; */
+  color: #fff;
+  border: none;
+  /* padding: 10px 15px;*/
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.main-content {
+  width: 80%;
+  padding: 20px;
+  margin-top: 0;
+}
+
+/* Welcome Section */
+#welcome-section {
+  margin-top: 0%;
+  color: green;
+  /* opacity: 4; /* Initially visible * */
+  transition: opacity 4s ease; /* Smooth fade-out transition */
+}
+
+#welcome-section h1 {
+  text-align: center;
+}
+
+/* Status Cards */
+.status-cards {
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #b7c0d1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  border-radius: 3rem;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.card:hover {
+  background-color: #4094ee; /* Change background color */
+  color: white; /* Change text color */
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+.card p:hover {
+  color: white;
+}
+
+/* Section Styling */
+.hidden {
+  display: none;
+}
+
+section {
+  margin-top: 5rem;
+}
+
+#appointments-section{
+  padding: 3rem;
+  width: 60vw;
+  min-height: 60vh;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  overflow-x: auto; /* Allow horizontal scroll on small devices if necessary */
+
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid black;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 10px;
+  border: 3px solid black;
+}
+
+table th {
+  background-color: #007bff;
+}
+#appointments-section th:nth-child(4),
+#appointments-section td:nth-child(4) {
+  max-width: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Patient Profile section */
+
+#profile-form label {
+  font-weight: bold;
+}
+
+#profile-form input,
+#profile-form select,
+#profile-form textarea {
+  width: 50vw;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #0a0909;
+  border-radius: 2rem;
+}
+
+#profile-form button,
+#edit-profile,
+#new-appointment {
+  background-color: #05e20d;
+  color: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 16px;
+  width: 15vw;
+  margin-top: 1rem;
+}
+
+#new-appointment:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+#profile-section {
+  padding: 20px;
+  margin-top: 5rem;
+    
+    height: auto;
+    width: auto;
+  /* border: 3px solid red; */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  overflow-x: auto; /* Allow horizontal scroll on small devices if necessary */
+
+}
+
+#profile-details,
+#profile-form {
+  /* border: 1px solid #ccc; */
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  /* display: grid; */
+  gap: 15px;
+  box-shadow: 0 4px 8px rgb(156, 60, 60);
+  border-radius: 10px;
+
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+}
+
+#cancel {
+  background-color: rgb(236, 134, 134);
+  width: 7rem;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 1rem;
+}
+#cancel:hover {
+  background-color: red;
+
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+#profile-form button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+#edit-profile:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Billing Section Styles */
+#billing-section {
+  width: 60vw;
+  height: 60vh;
+  margin-top: 5rem;
+  padding: 3rem;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  overflow-x: auto; /* Allow horizontal scroll on small devices if necessary */
+}
+
+.billing-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.billing-table-container {
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+#billing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+#billing-table th,
+#billing-table td {
+  text-align: left;
+  padding: 12px;
+  /* border: 1px solid #ddd; */
+}
+
+#billing-table th {
+  background-color: #4caf50;
+}
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button.view-invoice {
+  background-color: #476688;
+  /* color: white; */
+  width: 7rem;
+}
+
+button.view-invoice:hover {
+  background-color: #077cfa;
+}
+
+button.pay-now {
+  background-color: #28a745;
+  /* color: white; */
+  width: 7rem;
+}
+
+button.pay-now:hover {
+  background-color: #01fd3c;
+}
+#prescription{
+  width: 60vw;
+  height: 60vh;
+  margin-top: 5rem;
+  padding: 3rem;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  overflow-x: auto; /* Allow horizontal scroll on small devices if necessary */
+
+}
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .sidebar {
+    width: 100%;
+
+    height: auto;
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+  }
+  #welcome-section {
+    overflow: hidden;
+  }
+  .sidebar ul {
+    /* background-color: red; */
+    width: 26rem;
+    text-align: center;
+  }
+  .main-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .status-cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+ 
+  #profile-form input,
+  #profile-form select,
+  #profile-form textarea {
+    width: 100%;
+	box-sizing:border-box;
+  }
+
+  #profile-form #edit-profile,
+  #new-appointment {
+    width: 90%;
+  }
+  #profile-form button {
+    width: 10rem;
+  }
+  #edit-profile {
+    width: 7rem;
+  }
+  #new-appointment {
+    width: 11rem;
+  }
+ 
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    text-align: center;
+  }
+
+  .status-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    margin-bottom: 10px;
+  }
+
+  #welcome-section {
+    text-align: center;
+  }
+
+  #profile-section {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    
+  }
+  #profile-form button {
+    width: 10rem;
+  }
+  #new-appointment {
+    width: 11rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    position: relative;
+    font-size: 14px;
+    padding: 10px;
+    overflow: hidden;
+    transform: translateX(-100%); /* Hidden */
+
+  }
+  .toggle-btn {
+    display: block; /* Show the toggle button */
+   top:0;
+    left: 0;
+   /* border:3px solid red; */
+   width: 3rem;
+   height: 3rem;
+}
+.main-content {
+    margin-left: 0;
+    margin-top: -35em;
+    
+}
+  .sidebar ul {
+    /* background-color: red; */
+    width: 20rem;
+    text-align: center;
+  }
+
+  .status-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  #profile-form button {
+    width: 5rem;
+  }
+  #edit-profile {
+    width: 7rem;
+  }
+  #new-appointment {
+    width: 11rem;
+  }
+  #appointments-section{
+    height: auto;
+    width: auto;
+  }
+  
+  #prescription{
+    height: auto;
+    width: auto;
+    
+  }
+}
+
+/* Responsive Design for Welcome Section */
+@media (max-width: 768px) {
+  #welcome-section p {
+    font-size: 14px; /* Reduce font size for smaller screens */
+    margin: 10px 0; /* Remove large margins */
+  }
+  #appointments-section th:nth-child(4),
+  #appointments-section td:nth-child(4) {
+    max-width: 10rem;
+  }
+
+  /* Responsive Styles for devices with a max-width of 768px (tablets, small screens) */
+
+  #billing-section {
+    padding: 15px;
+    margin: 15px;
+    width: 100%;
+  }
+
+  #billing-table {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  #billing-section h2 {
+    font-size: 20px;
+  }
+
+  /* Make table horizontal scrollable on smaller devices */
+  #billing-table {
+    display: block;
+    width: 100%;
+  }
+
+  #billing-table thead {
+    display: none; /* Hide table headers */
+  }
+
+  #billing-table tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  #billing-table td {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    padding: 10px 20px;
+  }
+
+  #billing-table td:first-child {
+    font-weight: bold;
+    width: 50%;
+  }
+
+  #billing-table td:last-child {
+    text-align: right;
+  }
+
+  /* Make the buttons full-width for mobile */
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* Further responsive styles for mobile devices with a max-width of 480px */
+@media (max-width: 480px) {
+
+  #billing-section {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    
+  }
+
+  #billing-table {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  #billing-section h2 {
+    font-size: 18px;
+  }
+
+  #billing-table th,
+  #billing-table td {
+    padding: 8px;
+  }
+
+  /* Allow horizontal scrolling on mobile if necessary */
+  .billing-section {
+    overflow-x: auto;
+  }
+}
+

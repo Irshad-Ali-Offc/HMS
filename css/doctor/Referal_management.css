@@ -1,0 +1,226 @@
+
+.container {
+    width: 80vw; /* Adjusted width for better fitting */
+    height: auto;
+    margin: 20px auto;
+    padding: 20px; /* Reduced padding */
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: 1em;
+    margin-top: 10;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"],input[type="password"],input[type="file"], select, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+    
+}
+
+input[type="date"], input[type="time"] {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+}
+
+select, input, textarea {
+    width: 100%;
+}
+
+textarea {
+    height: 120px;
+    
+}
+ .ck-editor__editable[role="textbox"] {
+                /* editing area */
+                min-height: 300px;
+ padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f9f9f9;
+            }
+.error
+{
+  color:  red;
+}
+
+.add-btn {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    width: 20em;
+    position: relative;
+    left: 35%;
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+.add-btn:hover {
+    background-color: rgb(8, 245, 8);
+    font-size: medium;
+  transition: all 1s ease;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+/* Previous Prescriptions Section */
+#previousPrescriptions {
+    background-color: #f9f9f9;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: 1em;
+}
+
+#previousPrescriptions h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #444;
+    text-align: center;
+}
+
+#prescriptionsList {
+    list-style-type: none;
+}
+
+#prescriptionsList li {
+    background-color: #f4f7fa;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for Add/Subtract Buttons */
+.add-to-prescription, .subtract-from-prescription {
+    margin-left: 40px;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #10e017;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border-radius: 1em;
+}
+
+.add-to-prescription:hover {
+    background-color: #47834a;
+    font-size: medium;
+  transition: all 1s ease;
+}
+
+.subtract-from-prescription {
+    background-color: #e25d54;
+}
+
+.subtract-from-prescription:hover {
+    background-color: #fd0b07;
+    font-size: medium;
+  transition: all 1s ease;
+
+}
+
+/* Basic Layout for the Prescription Section */
+#prescriptionsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#prescriptionsList li {
+        margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        padding: 10px 18px;
+    }
+
+    input, select, textarea {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .form-group {
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    input, select, textarea {
+        font-size: 14px;
+    }
+}

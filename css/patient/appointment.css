@@ -1,0 +1,197 @@
+/* Basic styling for appointment section */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.appointment-section {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 3rem;
+  background-color: #b4b5b6;
+  height: 70vh;
+  width: 50vw;
+  text-align: left;
+  color: black;
+  font-weight: bold;
+  
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+label {
+  margin: 0.9rem 0;
+}
+
+input,
+select,
+button {
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 1em;
+}
+
+button {
+  background-color: #05e20d;
+  color: black;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 12rem;
+  /* border: 3px solid red; */
+  margin-top: 1.2rem;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); 
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);  
+}
+
+#booking-status,
+#cancel-status {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.slider-container {
+  width: 100%;
+  height: 100vh;
+  background-size: cover; /* Ensure the background image covers the entire area */
+  background-position: center;
+  position: relative;
+  transition: background-image 3s ease-in-out; /* Smooth transition for background change */
+  color: white; /* Text color inside the slider */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Optional: Styling the text */
+.slider-container h2 {
+  font-size: 3em;
+  font-weight: bold;
+  color: black;
+}
+#book-appointment-section{
+  
+  height: auto;
+  /* border: 2px solid black; */
+
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .appointment-section {
+    width: 60vw;
+    height: auto;
+    
+  }
+
+  button {
+    width: 10rem;
+  }
+
+  .slider-container h2 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointment-section {
+    width: 80vw;
+    height: auto;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  label {
+    font-size: 0.9em;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 0.9em;
+    padding: 6px;
+  }
+
+  button {
+    width: 8rem;
+    
+  }
+
+  .slider-container h2 {
+    font-size: 2em;
+  }
+  button{
+    width: 10rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-section {
+    width: 90vw;
+    height: auto;
+    
+  }
+
+
+  h2 {
+    font-size: 1em;
+  }
+
+  label {
+    font-size: 0.8em;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 0.8em;
+    padding: 5px;
+  }
+
+  button {
+    width: 7rem;
+  }
+
+  .slider-container h2 {
+    font-size: 1.5em;
+  }
+  button{
+    width: 10rem;
+  }
+}
+
+
+@media (max-width: 730px) {
+  #book-appointment-section{
+    width: 100%;
+    
+
+  }
+  .slider-container h2{
+    display: none;
+  }
+  #book-appointment-section h2{
+    display: block;
+  }
+  button{
+    width: 10rem;
+  }
+}

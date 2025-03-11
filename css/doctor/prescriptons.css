@@ -1,0 +1,177 @@
+
+  h3, h4 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Prescription Section Container */
+  #prescriptions-section {
+
+    width: 80vw; /* Adjusted width for better fitting */
+    height: auto;
+    margin: 20px auto;
+    padding: 20px; /* Reduced padding */
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    /* border: 4px solid red; */
+    border-radius: 1em;
+  }
+  
+  .patient-section, .medication-entry, .view-prescriptions {
+    margin-bottom: 20px;
+  }
+  
+  /* Input fields, dropdowns, and buttons */
+  input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+    
+  }
+  .patient-section select{
+    
+    font-size: 14px; /* Reduced font size */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    height: 2.5rem;
+  }
+  
+  input[type="text"]:focus, select:focus {
+    border-color: #0066cc;
+    outline: none;
+  }
+
+  .prescripton-btn{
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 12rem;
+    padding: 1rem;
+    border-radius: 19px;
+    
+    
+  }
+  #save-prescription-btn:hover{
+    background-color: green;
+  }
+
+
+  
+  .prescripton-btn:hover {
+    background-color: red;
+    color: white;
+    font-size: medium;
+    transition: all 1s ease;
+  }
+  
+  .prescripton-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Medication Section */
+  #medications-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .medication-entry {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+
+  }
+  
+  .medication-entry label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .medication-entry select,
+  .medication-entry input {
+    margin-bottom: 10px;
+    border-radius: 2rem;
+  }
+  
+  .remove-medication {
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 12rem;
+    padding: 1rem;
+    border-radius: 19px;
+    border: none;
+  }
+  
+  .remove-medication:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Patient selection dropdown */
+  .patient-section {
+    margin-top: 20px;
+  }
+  
+  .patient-section select {
+    width: 50%;
+    margin-top: 8px;
+  }
+  
+  /* Patient Details Section */
+  .patient-details {
+    background-color: #f4f7fc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  .patient-details p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* View Existing Prescriptions Section */
+  .view-prescriptions {
+    margin-top: 30px;
+    color: white;
+}
+
+#history-table {
+      background-color: #0b1c3b;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #history-table th, #history-table td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  #history-table th {
+    background-color: #007bff;
+    font-weight: bold;
+  }
+  
+ 
+  
+  
