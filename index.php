@@ -1,94 +1,143 @@
 <?php
 include 'dbc.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hospital Management System</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css" />
-    <script src="js/login.js"defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="/js/imagechanging.js"></script>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+           body {
+            background-color: #b4b5b6;
+            background-image: url('/image/bgimg3.png');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in;
+           }
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            color: #ffffff;
+            background-color: #0b1c3b;
+            color: white;
+        }
+        .btn-login:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1.2);
+            color: white;
+        }
+    
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .signup-link a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="container">
-  <a href="index.php">
-  <div class="main-logo">
-    </div>
-    </a>  
-    <div class="forms-container">
-      <div class="signin-signup">
-        <form method="post" class="sign-in-form">
-          <h2 class="title">Sign In</h2>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" name="username" placeholder="Username" required  />
-          </div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" placeholder="Password" required />
-          </div>
-          <input type="submit" name="login" value="Login" class="btn solid" />
-
-         
+<div class="container">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-login" name="login" >Login</button>
+            
+            <div class="signup-link">
+                <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+            </div>
         </form>
-
-
-        <form method="post" class="sign-up-form">
-          <h2 class="title">Sign Up</h2>
-          <div class="input-field"> 
-            <i class="fas fa-user"></i>
-            <input type="text" name="name" placeholder="Name" required />
-          </div>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" name="username" placeholder="Username" required />
-          </div>
-          <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" placeholder="Password" required />
-          </div>
-          <input type="submit" name="register" value="Sign Up" class="btn solid" />
-
-         
-        </form>
-      </div>
     </div>
-    <div class="panels-container">
+</div>
 
-      <div class="panel left-panel">
-        <div class="content">
-          <h3>New here?</h3>
-          <p>
-          <H4>
-            Welcome to Medicare HMS!
-          </H4>
-          Join us for a better healthcare experience. Sign up and be part of something meaningful!
-          <h4>
-          </p>
-          <button class="btn transparent" id="sign-up-btn">Sign Up</button>
-        </div>
-        <img src="image/signup.png" class="image leftimg" alt="">
-      </div>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+    // Array of background image URLs
+    const images = [
+        'image/bgimg3.png', 
+        'image/bgimg2.png',
+        'image/bgimg4.png',
+        'image/bgimg1.png',
+        'image/bgimg3.png', 
+        'image/bgimg4.png',
+        'image/bgimg3.png',
+        'image/bgimg2.png'
+    ];
 
-      <div class="panel right-panel">
-        <div class="content">
-          <h3>One of us?</h3>
-          <p>
-          <h2> Welcome Back! </h2>
-          Glad to have you here. Sign in to continue your journey with us and make healthcare easier, together!</p>
-          <button class="btn transparent" id="sign-in-btn">Sign In</button>
-        </div>
-        <img src="image/signin.png" class="image rightimg" alt="">
-      </div>
-    </div>
-  </div>
+    let currentImageIndex = 0;
+    let preloadedImages = [];
+
+    // Preload images to avoid delay
+    function preloadImages() {
+        for (let i = 0; i < images.length; i++) {
+            preloadedImages[i] = new Image();
+            preloadedImages[i].src = images[i];
+        }
+    }
+
+    // Function to change the background image
+    function changeBackground() {
+        document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+    }
+
+    // Preload images first
+    preloadImages();
+
+    // Start background change after images are preloaded
+    setTimeout(() => {
+        setInterval(changeBackground, 6000);
+        changeBackground(); // Set the initial background image
+    }, 500); // Small delay to allow preloading
+</script>
+
+
 </body>
 </html>
+
 <?php
 if(isset($_POST['login']))
 {
@@ -119,28 +168,6 @@ if(isset($_POST['login']))
 	else{
 		echo '<script>alert("Invalid username or password")</script>';	
 	}
-}
-if(isset($_POST['register'])) {
-  $name = $_POST['name'];
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  
-  
-  $check_sql = "SELECT * FROM users WHERE username = '$username'";
-  $check_result = mysqli_query($con, $check_sql);
-  
-  if(mysqli_num_rows($check_result) > 0) {
-      echo '<script>alert("Username already exists. Please choose another.")</script>';
-  } else {
-      $sql = "INSERT INTO users VALUES('', '$name', '$username', '$password', 'patient')";
-      $result = mysqli_query($con, $sql);
-      
-      if($result) {
-          echo '<script>alert("Account created successfully")</script>';
-      } else {
-          echo '<script>alert("Sorry, try again later")</script>';    
-      }
-  }
 }
 
 ?>
