@@ -1,9 +1,9 @@
 <?php
 include 'header.php';
 ?>
-        <!-- Main Content -->
+        
         <main class="main-content">
-             <!-- Appointments Section -->
+             
             <section id="appointments-section">
                 <h2>Appointment History</h2>
                 <table>

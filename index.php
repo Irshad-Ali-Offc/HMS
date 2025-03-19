@@ -10,9 +10,9 @@ include 'dbc.php';
     <title>Login</title>
     <script src="/js/imagechanging.js"></script>
 
-    <!-- Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    
     <style>
            body {
             background-color: #b4b5b6;
@@ -91,11 +91,11 @@ include 'dbc.php';
     </div>
 </div>
 
-<!-- Bootstrap JS and dependencies -->
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 <script>
-    // Array of background image URLs
+    
     const images = [
         'image/bgimg3.png', 
         'image/bgimg2.png',
@@ -110,7 +110,7 @@ include 'dbc.php';
     let currentImageIndex = 0;
     let preloadedImages = [];
 
-    // Preload images to avoid delay
+    
     function preloadImages() {
         for (let i = 0; i < images.length; i++) {
             preloadedImages[i] = new Image();
@@ -118,20 +118,20 @@ include 'dbc.php';
         }
     }
 
-    // Function to change the background image
+    
     function changeBackground() {
         document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
         currentImageIndex = (currentImageIndex + 1) % images.length;
     }
 
-    // Preload images first
+    
     preloadImages();
 
-    // Start background change after images are preloaded
+   
     setTimeout(() => {
         setInterval(changeBackground, 6000);
-        changeBackground(); // Set the initial background image
-    }, 500); // Small delay to allow preloading
+        changeBackground(); 
+    }, 500); 
 </script>
 
 

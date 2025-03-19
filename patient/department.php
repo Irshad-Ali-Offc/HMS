@@ -2,9 +2,9 @@
 include 'header.php';
 ?>
 
-        <!-- Main Content -->
+       
         <main class="main-content">
-             <!-- Profile Section -->
+             
             <section id="doctor-section">
                 <h2>View Departments</h2>
                 <?php

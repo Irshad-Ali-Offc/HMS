@@ -45,9 +45,9 @@ $age = $dobObject->diff($currentDate)->y;
 }
 </style>
 
-        <!-- Main Content -->
+        
         <main class="main-content">
-             <!-- Appointments Section -->
+             
             <section id="appointments-section">
                 <h2 class="text-center">Hospital Management System</h2>
             <center>

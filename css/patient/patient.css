@@ -1,4 +1,4 @@
-/* General Reset */
+
 body,
 html {
   margin: 0;
@@ -12,11 +12,11 @@ html {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the image */
-  width: 35em; /* Set the size of the watermark */
+  transform: translate(-50%, -50%);
+  width: 35em; 
   height: 35em;
-  opacity: 0.3; /* Adjust opacity directly */
-  pointer-events: none; /* Ensure it doesn't block user interactions */
+  opacity: 0.3; 
+  pointer-events: none; 
   
 
 }
@@ -62,7 +62,7 @@ html {
 .text-dark{
 	color:black;	
 }
-/* Layout */
+
 .dashboard-container {
   display: flex;
   margin-left: 25%;
@@ -76,7 +76,7 @@ html {
   padding: 20px;
   text-align: center;
   position: fixed;
-  transform: translateX(0); /* Initially visible */
+  transform: translateX(0);
     transition: transform 0.3s ease;
   z-index: 3;
   left: 0;
@@ -132,7 +132,7 @@ html {
 .sidebar ul li a:hover {
   background-color: #bd3636;
 }
-/* Toggle Button Styling */
+
 .toggle-btn {
   display: none;
   position: fixed;
@@ -151,19 +151,18 @@ html {
   margin-top: 0;
 }
 
-/* Welcome Section */
+
 #welcome-section {
   margin-top: 0%;
   color: green;
-  /* opacity: 4; /* Initially visible * */
-  transition: opacity 4s ease; /* Smooth fade-out transition */
+  transition: opacity 4s ease;
 }
 
 #welcome-section h1 {
   text-align: center;
 }
 
-/* Status Cards */
+
 .status-cards {
   margin-top: 3.5rem;
   display: flex;
@@ -183,9 +182,9 @@ html {
   cursor: pointer;
 }
 .card:hover {
-  background-color: #4094ee; /* Change background color */
-  color: white; /* Change text color */
-  transform: scale(1.05); /* Slightly enlarge the card */
+  background-color: #4094ee; 
+  color: white; 
+  transform: scale(1.05); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -203,7 +202,7 @@ html {
   color: white;
 }
 
-/* Section Styling */
+
 .hidden {
   display: none;
 }
@@ -219,7 +218,7 @@ section {
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   border-radius: 10px;
-  overflow-x: auto; /* Allow horizontal scroll on small devices if necessary */
+  overflow-x: auto; 
 
 }
 table {
@@ -246,7 +245,6 @@ table th {
   text-overflow: ellipsis;
 }
 
-/* Patient Profile section */
 
 #profile-form label {
   font-weight: bold;
@@ -288,21 +286,19 @@ table th {
     
     height: auto;
     width: auto;
-  /* border: 3px solid red; */
+  
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   border-radius: 10px;
-  overflow-x: auto; /* Allow horizontal scroll on small devices if necessary */
+  overflow-x: auto; 
 
 }
 
 #profile-details,
 #profile-form {
-  /* border: 1px solid #ccc; */
   padding: 15px;
   margin-top: 15px;
   border-radius: 5px;
-  /* display: grid; */
   gap: 15px;
   box-shadow: 0 4px 8px rgb(156, 60, 60);
   border-radius: 10px;
@@ -335,7 +331,7 @@ button {
 #cancel:hover {
   background-color: red;
 
-  transform: scale(1.05); /* Slightly enlarge the card */
+  transform: scale(1.05); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 }
 #profile-form button:hover {
@@ -349,7 +345,7 @@ button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
 }
 
-/* Billing Section Styles */
+
 #billing-section {
   width: 60vw;
   height: 60vh;
@@ -358,7 +354,7 @@ button {
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   border-radius: 10px;
-  overflow-x: auto; /* Allow horizontal scroll on small devices if necessary */
+  overflow-x: auto; 
 }
 
 .billing-section h2 {
@@ -369,7 +365,7 @@ button {
 }
 
 .billing-table-container {
-  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-x: auto; 
 }
 
 #billing-table {
@@ -382,7 +378,6 @@ button {
 #billing-table td {
   text-align: left;
   padding: 12px;
-  /* border: 1px solid #ddd; */
 }
 
 #billing-table th {
@@ -399,7 +394,6 @@ button {
 
 button.view-invoice {
   background-color: #476688;
-  /* color: white; */
   width: 7rem;
 }
 
@@ -409,7 +403,6 @@ button.view-invoice:hover {
 
 button.pay-now {
   background-color: #28a745;
-  /* color: white; */
   width: 7rem;
 }
 
@@ -424,7 +417,7 @@ button.pay-now:hover {
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   border-radius: 10px;
-  overflow-x: auto; /* Allow horizontal scroll on small devices if necessary */
+  overflow-x: auto; 
 
 }
 
@@ -451,7 +444,6 @@ button.pay-now:hover {
     overflow: hidden;
   }
   .sidebar ul {
-    /* background-color: red; */
     width: 26rem;
     text-align: center;
   }
@@ -525,14 +517,14 @@ button.pay-now:hover {
     font-size: 14px;
     padding: 10px;
     overflow: hidden;
-    transform: translateX(-100%); /* Hidden */
+    transform: translateX(-100%); 
 
   }
   .toggle-btn {
-    display: block; /* Show the toggle button */
+    display: block; 
    top:0;
     left: 0;
-   /* border:3px solid red; */
+   
    width: 3rem;
    height: 3rem;
 }
@@ -542,7 +534,6 @@ button.pay-now:hover {
     
 }
   .sidebar ul {
-    /* background-color: red; */
     width: 20rem;
     text-align: center;
   }
@@ -576,18 +567,17 @@ button.pay-now:hover {
   }
 }
 
-/* Responsive Design for Welcome Section */
 @media (max-width: 768px) {
   #welcome-section p {
-    font-size: 14px; /* Reduce font size for smaller screens */
-    margin: 10px 0; /* Remove large margins */
+    font-size: 14px; 
+    margin: 10px 0;
   }
   #appointments-section th:nth-child(4),
   #appointments-section td:nth-child(4) {
     max-width: 10rem;
   }
 
-  /* Responsive Styles for devices with a max-width of 768px (tablets, small screens) */
+  
 
   #billing-section {
     padding: 15px;
@@ -608,14 +598,14 @@ button.pay-now:hover {
     font-size: 20px;
   }
 
-  /* Make table horizontal scrollable on smaller devices */
+  
   #billing-table {
     display: block;
     width: 100%;
   }
 
   #billing-table thead {
-    display: none; /* Hide table headers */
+    display: none; 
   }
 
   #billing-table tr {
@@ -640,14 +630,14 @@ button.pay-now:hover {
     text-align: right;
   }
 
-  /* Make the buttons full-width for mobile */
+  
   button {
     width: 100%;
     padding: 12px;
   }
 }
 
-/* Further responsive styles for mobile devices with a max-width of 480px */
+
 @media (max-width: 480px) {
 
   #billing-section {
@@ -675,7 +665,7 @@ button.pay-now:hover {
     padding: 8px;
   }
 
-  /* Allow horizontal scrolling on mobile if necessary */
+
   .billing-section {
     overflow-x: auto;
   }

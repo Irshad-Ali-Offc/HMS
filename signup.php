@@ -9,9 +9,9 @@ include 'dbc.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <!-- Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    
     <style>
         body {
             background-color: #b4b5b6;
@@ -86,27 +86,27 @@ include 'dbc.php';
         <div class="signup-container">
             <h2>Sign Up</h2>
             <form method="post">
-                <!-- Name Field -->
+                
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
                         required>
                 </div>
-                <!-- Username Field -->
+               
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username"
                         placeholder="Enter your username" required>
                 </div>
-                <!-- Password Field -->
+                
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password"
                         placeholder="Enter your password" required>
                 </div>
-                <!-- Sign Up Button -->
+                
                 <button type="submit" class="btn btn-signup" name="register">Sign Up</button>
-                <!-- Login Link -->
+                
                 <div class="login-link">
                     <p>Already have an account? <a href="index.php">Login</a></p>
                 </div>
@@ -114,11 +114,11 @@ include 'dbc.php';
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script>
-        // Array of background image URLs
+       
         const images = [
             'image/bgimg3.png',
             'image/bgimg2.png',
@@ -133,7 +133,7 @@ include 'dbc.php';
         let currentImageIndex = 0;
         let loadedImages = [];
 
-        // Preload images to avoid delay
+        
         function loadImages() {
             for (let i = 0; i < images.length; i++) {
                 loadedImages[i] = new Image();
@@ -141,20 +141,20 @@ include 'dbc.php';
             }
         }
 
-        // Function to change the background image
+        
         function changeBackground() {
             document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
             currentImageIndex = (currentImageIndex + 1) % images.length;
         }
 
-        // Preload images first
+        
         loadImages();
 
-        // Start background change after images are preloaded
+        
         setTimeout(() => {
             setInterval(changeBackground, 6000);
-            changeBackground(); // Set the initial background image
-        }, 500); // Small delay to allow preloading
+            changeBackground(); 
+        }, 500); 
     </script>
 
 </body>

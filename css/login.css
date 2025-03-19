@@ -178,8 +178,7 @@ form.sign-in-form {
   
 }
 .leftimg{
-  /* border: 4px solid red; */
-  /* max-width: 30rem; */
+  
   margin-right: 4rem;
 }
 
@@ -194,8 +193,7 @@ form.sign-in-form {
   transition: transform 0.9s ease-in-out;
   transition-delay: 0.6s;
 
-  /* position: absolute; */
-  /* top: 20%; */
+  
 }
 
 .panel h3 {
@@ -224,7 +222,7 @@ form.sign-in-form {
   transform: translateX(800px);
 }
 
-/* ANIMATION */
+
 
 .container.sign-up-mode:before {
   transform: translate(100%, -50%);
@@ -427,7 +425,6 @@ form.sign-in-form {
   position: relative;
   z-index: 10;
   margin-bottom: 40px;
-  /* border:  3px solid red; */
   cursor: pointer;
   
 }
