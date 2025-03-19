@@ -5,16 +5,14 @@
     margin-bottom: 20px;
   }
   
-  /* Prescription Section Container */
   #prescriptions-section {
 
-    width: 80vw; /* Adjusted width for better fitting */
+    width: 80vw; 
     height: auto;
     margin: 20px auto;
-    padding: 20px; /* Reduced padding */
+    padding: 20px; 
     background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-    /* border: 4px solid red; */
     border-radius: 1em;
   }
   
@@ -22,7 +20,6 @@
     margin-bottom: 20px;
   }
   
-  /* Input fields, dropdowns, and buttons */
   input[type="text"], select {
     width: 100%;
     padding: 12px;
@@ -36,7 +33,7 @@
   }
   .patient-section select{
     
-    font-size: 14px; /* Reduced font size */
+    font-size: 14px; 
     border: 1px solid #ccc;
     border-radius: 25px;
     background-color: #f9f9f9;
@@ -80,7 +77,6 @@
     cursor: not-allowed;
   }
   
-  /* Medication Section */
   #medications-container {
     display: flex;
     flex-direction: column;
@@ -125,7 +121,7 @@
     background-color: #c0392b;
   }
   
-  /* Patient selection dropdown */
+
   .patient-section {
     margin-top: 20px;
   }
@@ -135,7 +131,6 @@
     margin-top: 8px;
   }
   
-  /* Patient Details Section */
   .patient-details {
     background-color: #f4f7fc;
     border-radius: 8px;
@@ -148,7 +143,7 @@
     color: #333;
   }
   
-  /* View Existing Prescriptions Section */
+
   .view-prescriptions {
     margin-top: 30px;
     color: white;

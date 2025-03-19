@@ -9,33 +9,30 @@
 }
 
 .appointments-container {
-  width: 80vw; /* Adjusted width for better fitting */
+  width: 80vw; 
   height: auto;
   margin: 20px auto;
-  padding: 20px; /* Reduced padding */
+  padding: 20px; 
   background: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   margin-top: 0;
   border-radius: 1em;
-  /* overflow: hidden; */
 }
 
-/* Search container styling */
 .search-container {
   position: relative;
   width: 23%;
   margin: 12px auto;
   display: flex;
   float: left;
-  margin-left: 4em; /* Reduced margin */
+  margin-left: 4em;
   align-items: center;
 }
 
-/* Search input field styling */
 #search-input {
   width: 100%;
   padding: 12px 40px 12px 20px;
-  font-size: 14px; /* Reduced font size */
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 25px;
   background-color: #f9f9f9;
@@ -52,7 +49,6 @@
   box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
 }
 
-/* Search button with icon styling */
 .search-btn {
   position: absolute; 
   height:auto; 
@@ -62,7 +58,7 @@
   background-color: transparent;
   border: none;
   color: #007bff;
-  font-size: 16px; /* Adjusted icon size */
+  font-size: 16px; 
   cursor: pointer;
 }
 
@@ -108,7 +104,7 @@
 
 .appointments-table td:nth-child(5),
 .appointments-table th:nth-child(5) {
-  width: 18rem; /* Reduced width */
+  width: 18rem;
 }
 
 .action-btn {
@@ -118,12 +114,11 @@
   color: white;
   float: left;
   padding: 0.4em;
-  /* font-size: medium; Reduced font size */
   margin-right: 1rem;
   margin-left: 1rem;
   cursor: pointer;
   border-radius: 3em;
-  /* font-weight: bold; */
+
 }
 
 .action-btn:hover {
@@ -138,10 +133,9 @@
   color: white;
   float: left;
   padding: 0.4em;
-  /* font-size: medium; Reduced font size */
   cursor: pointer;
   border-radius: 3em;
-  /* font-weight: bold; */
+
 }
 .delete-btn{
   background-color: #c0392b;
@@ -149,10 +143,9 @@
   color: white;
   float: left;
   padding: 0.4em;
-  /* font-size: medium; Reduced font size */
   cursor: pointer;
   border-radius: 3em;
-  /* font-weight: bold; */
+
 }
 .history-btn{
   background-color: #007BFF;
@@ -160,22 +153,17 @@
   color: white;
   float: left;
   padding: 0.4em;
-  /* font-size: medium; Reduced font size */
   cursor: pointer;
   border-radius: 3em;
-  /* font-weight: bold; */
 }
 
 #add-appointment-btn {
-  width: 11rem; /* Reduced width */
+  width: 11rem; 
   margin: 10px auto;
   margin-left: 3rem; 
   margin-top: 1.3rem;
 }
 
-/* Media Queries for responsiveness */
-
-/* For 768px screens (Tablet portrait or smaller desktop) */
 @media (max-width: 768px) {
   .appointments-container {
     width: 90vw;
@@ -208,7 +196,6 @@
   }
 }
 
-/* For 480px screens (Mobile) */
 @media (max-width: 480px) {
   .appointments-container {
     padding: 10px;
