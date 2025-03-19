@@ -7,7 +7,6 @@ $row=mysqli_fetch_array($result);
 		<section id="Referal-section">
             <div class="container">
                <h2>Update Profile</h2>
-               <!-- Form to add a new referral -->
                <form method="post" enctype="multipart/form-data">
                	<input type="hidden" name="user_id" value="<?php echo $row['user_id'];?>">
                   <div class="form-group">

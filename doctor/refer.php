@@ -4,7 +4,6 @@ include 'header.php';
 		<section id="Referal-section">
             <div class="container">
                <h2>Refer Patient</h2>
-               <!-- Form to add a new referral -->
                <form method="post">
                   <div class="form-group">
                      <label>Patient</label>
