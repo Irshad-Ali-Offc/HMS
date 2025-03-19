@@ -2,9 +2,9 @@
 include 'header.php';
 ?>
 
-        <!-- Main Content -->
+        
         <main class="main-content">
-             <!-- Profile Section -->
+             
             <section id="profile-section">
             <?php
 			$sql="select patient.*, users.name from patient INNER JOIN users ON users.id=patient.user_id where user_id='".$patient['id']."'";

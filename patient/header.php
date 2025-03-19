@@ -29,9 +29,9 @@ $patient=mysqli_fetch_array($result);
         <img src="../image/watermark.png" alt="Watermark">
     </div>
     <div class="dashboard-container">
-        <!-- Sidebar -->
+        
         <aside class="sidebar" id="sidebar">
-            <!-- User Profile Section -->
+            
             <div class="profile-picture">
                 <a href="#"> <img src="../image/logo.png" alt="User Profile Picture"> </a>
             </div>

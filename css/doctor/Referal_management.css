@@ -1,24 +1,20 @@
 .container {
-    width: 80vw;
-    /* Adjusted width for better fitting */
+    width: 80vw; /* Adjusted width for better fitting */
     height: auto;
     margin: 20px auto;
-    padding: 20px;
-    /* Reduced padding */
+    padding: 20px; /* Reduced padding */
     background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: 1em;
     margin-top: 10;
 }
 
-/* Header */
 h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Form Styles */
 form {
     display: grid;
     gap: 20px;
@@ -122,7 +118,6 @@ textarea {
 
 
 
-/* Previous Prescriptions Section */
 #previousPrescriptions {
     background-color: #f9f9f9;
     padding: 20px;
@@ -151,8 +146,7 @@ textarea {
 }
 
 /* Styling for Add/Subtract Buttons */
-.add-to-prescription,
-.subtract-from-prescription {
+.add-to-prescription, .subtract-from-prescription {
     margin-left: 40px;
     padding: 5px 10px;
     font-size: 15px;
@@ -182,7 +176,6 @@ textarea {
 
 }
 
-/* Basic Layout for the Prescription Section */
 #prescriptionsList {
     list-style-type: none;
     padding: 0;
@@ -196,7 +189,6 @@ textarea {
     border-radius: 2rem;
 }
 
-/* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
     .container {
         width: 95%;

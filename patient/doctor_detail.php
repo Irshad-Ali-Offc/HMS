@@ -42,9 +42,9 @@ $row=mysqli_fetch_array($result);
 }
 </style>
 
-        <!-- Main Content -->
+       
         <main class="main-content">
-             <!-- Profile Section -->
+             
             <section id="doctor-section">
                 <div class="image-container">
                 	<img src="../image/<?php echo $row['image'];?>" class="doctor-image">

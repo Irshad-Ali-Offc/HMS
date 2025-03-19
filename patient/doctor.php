@@ -38,9 +38,9 @@ include 'header.php';
 }
 </style>
 
-        <!-- Main Content -->
+       
         <main class="main-content">
-             <!-- Profile Section -->
+             
             <section id="doctor-section">
                 <h2>View Doctors</h2>
                 <form method="post">

@@ -8,7 +8,6 @@
     border-radius: 1em;
 }
 
-/* Profile Card */
 .profile-card {
     
     display: flex;
@@ -66,7 +65,6 @@
 
 .contact-info {
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     gap: 0px;
     
     display: flex;
@@ -115,7 +113,7 @@
     resize: none;
 }
 
-/* Buttons */
+
 .save-btn:hover{
     width: 7rem !important;
    
@@ -126,7 +124,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Media Queries */
+
 @media screen and (max-width: 768px) {
     .contact-info {
         grid-template-columns: 1fr;

@@ -2,15 +2,15 @@
 include 'header.php';
 ?>
 
-        <!-- Main Content -->
+       
         <main class="main-content">
-            <!-- Welcome Section -->
+            
             <section id="welcome-section">
                 <h1>Welcome, <?php echo $patient['name'];?>!</h1>
 
             </section>
 
-            <!-- Status Cards Section -->
+            
             <div class="status-cards" id="status-cards">
                 <div class="card">
                 <?php
