@@ -1,9 +1,10 @@
-
 .container {
-    width: 80vw; /* Adjusted width for better fitting */
+    width: 80vw;
+    /* Adjusted width for better fitting */
     height: auto;
     margin: 20px auto;
-    padding: 20px; /* Reduced padding */
+    padding: 20px;
+    /* Reduced padding */
     background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: 1em;
@@ -34,7 +35,11 @@ label {
     color: #555;
 }
 
-input[type="text"],input[type="password"],input[type="file"], select, textarea {
+input[type="text"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -44,10 +49,11 @@ input[type="text"],input[type="password"],input[type="file"], select, textarea {
     border-radius: 35px;
     transition: all 0.3s ease-in-out;
     background-color: #f9f9f9;
-    
+
 }
 
-input[type="date"], input[type="time"] {
+input[type="date"],
+input[type="time"] {
     cursor: pointer;
     padding: 10px;
     border: 1px solid #ddd;
@@ -60,18 +66,21 @@ input[type="date"], input[type="time"] {
     background-color: #f9f9f9;
 }
 
-select, input, textarea {
+select,
+input,
+textarea {
     width: 100%;
 }
 
 textarea {
     height: 120px;
-    
+
 }
- .ck-editor__editable[role="textbox"] {
-                /* editing area */
-                min-height: 300px;
- padding: 10px;
+
+.ck-editor__editable[role="textbox"] {
+    /* editing area */
+    min-height: 300px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
@@ -80,10 +89,10 @@ textarea {
     border-radius: 35px;
     transition: all 0.3s ease-in-out;
     background-color: #f9f9f9;
-            }
-.error
-{
-  color:  red;
+}
+
+.error {
+    color: red;
 }
 
 .add-btn {
@@ -106,9 +115,9 @@ textarea {
 .add-btn:hover {
     background-color: rgb(8, 245, 8);
     font-size: medium;
-  transition: all 1s ease;
-  color: black;
-  font-weight: bold;
+    transition: all 1s ease;
+    color: black;
+    font-weight: bold;
 }
 
 
@@ -142,7 +151,8 @@ textarea {
 }
 
 /* Styling for Add/Subtract Buttons */
-.add-to-prescription, .subtract-from-prescription {
+.add-to-prescription,
+.subtract-from-prescription {
     margin-left: 40px;
     padding: 5px 10px;
     font-size: 15px;
@@ -158,7 +168,7 @@ textarea {
 .add-to-prescription:hover {
     background-color: #47834a;
     font-size: medium;
-  transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .subtract-from-prescription {
@@ -168,7 +178,7 @@ textarea {
 .subtract-from-prescription:hover {
     background-color: #fd0b07;
     font-size: medium;
-  transition: all 1s ease;
+    transition: all 1s ease;
 
 }
 
@@ -179,7 +189,7 @@ textarea {
 }
 
 #prescriptionsList li {
-        margin: 10px 0;
+    margin: 10px 0;
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -201,7 +211,9 @@ textarea {
         padding: 10px 18px;
     }
 
-    input, select, textarea {
+    input,
+    select,
+    textarea {
         font-size: 14px;
     }
 }
@@ -220,7 +232,9 @@ textarea {
         font-size: 14px;
     }
 
-    input, select, textarea {
+    input,
+    select,
+    textarea {
         font-size: 14px;
     }
 }
