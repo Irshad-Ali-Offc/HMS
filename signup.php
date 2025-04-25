@@ -9,31 +9,44 @@ include 'dbc.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <style>
         body {
             background-color: #b4b5b6;
-            height: 100vh;
             background-size: cover;
-            background-position: center;
+            height: 70vh;
             background-repeat: no-repeat;
-            transition: background-image 2s ease-in;
+            transition: background-image 3s ease-in;
+            display: flex;
 
         }
 
         .logo {
-            height: 4rem;
-            width: 4rem;
+            height: 8rem;
+            width: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
         }
+
+        .logo img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
         .signup-container {
             max-width: 400px;
+            border: 3px solid white;
             margin: 100px auto;
             padding: 20px;
-            background-color: #ffffff;
+            background-color: rgb(186, 213, 243);
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 1.2);
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+
         }
 
         .signup-container h2 {
@@ -46,23 +59,28 @@ include 'dbc.php';
             border-radius: 5px;
         }
 
+        .form-label {
+            font-weight: bold;
+        }
+
         .btn-signup {
             width: 100%;
             padding: 10px;
             border-radius: 5px;
-            background-color: #007bff;
             border: none;
             color: #ffffff;
             background-color: #0b1c3b;
             color: white;
-          
+            transition: transform 0.6s ease;
+
         }
 
         .btn-signup:hover {
             background-color: #45a049;
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+            transform: scale(0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1.2);
             color: white;
+            font-weight: bold;
         }
 
         .login-link {
@@ -73,40 +91,44 @@ include 'dbc.php';
         .login-link a {
             color: green;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .login-link a:hover {
-            text-decoration: underline;
+            color: blue;
         }
     </style>
 </head>
 
 <body>
+    <div class="logo">
+        <img src="image/logo.png" alt="">
+    </div>
     <div class="container">
         <div class="signup-container">
             <h2>Sign Up</h2>
             <form method="post">
-                
+
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
                         required>
                 </div>
-               
+
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username"
                         placeholder="Enter your username" required>
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password"
                         placeholder="Enter your password" required>
                 </div>
-                
+
                 <button type="submit" class="btn btn-signup" name="register">Sign Up</button>
-                
+
                 <div class="login-link">
                     <p>Already have an account? <a href="index.php">Login</a></p>
                 </div>
@@ -114,11 +136,9 @@ include 'dbc.php';
         </div>
     </div>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
     <script>
-       
+
         const images = [
             'image/bgimg3.png',
             'image/bgimg2.png',
@@ -133,7 +153,7 @@ include 'dbc.php';
         let currentImageIndex = 0;
         let loadedImages = [];
 
-        
+
         function loadImages() {
             for (let i = 0; i < images.length; i++) {
                 loadedImages[i] = new Image();
@@ -141,19 +161,19 @@ include 'dbc.php';
             }
         }
 
-        
+
         function changeBackground() {
             document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
             currentImageIndex = (currentImageIndex + 1) % images.length;
         }
 
-        
+
         loadImages();
 
-        
+
         setTimeout(() => {
             setInterval(changeBackground, 6000);
-            changeBackground(); 
+            changeBackground();
         }, 500); 
     </script>
 
