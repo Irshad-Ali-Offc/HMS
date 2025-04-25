@@ -2,6 +2,7 @@
 include 'header.php';
 ?>
 
+
         
         <main class="main-content">
              
@@ -49,10 +50,7 @@ include 'header.php';
             
         </main>
     </div>
-
-
-</body>
-
+<script src="../js/PpValidations.js"></script>
 </html>
 <?php
 if(isset($_POST['submit'])){
