@@ -22,7 +22,8 @@ if(mysqli_num_rows($result)<1){
                 <h2>Get Appointment</h2>
                 <form method="post" id="profile-form">
                 <input type="hidden" name="id" value="<?php echo $id;?>">
-                <input type="hidden" name="fee" value="<?php echo $fee;?>">
+				<label for="fee">Consultation Fee:</label>
+                <input type="text" name="fee" value="<?php echo $fee;?> " readonly placeholder="Consultation Fee">
                     <label for="full-name">Patient Name:</label>
                     <input type="text" name="name" value="<?php echo $row['name'];?>" readonly placeholder="Enter full name" required>
 
