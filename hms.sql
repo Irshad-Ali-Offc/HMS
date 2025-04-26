@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2025 at 06:27 AM
+-- Generation Time: Apr 26, 2025 at 07:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,14 +46,11 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`id`, `doctor_id`, `patient_id`, `patient_name`, `added_on`, `date`, `time`, `fee`, `payment_id`, `pay_status`, `status`) VALUES
-(2, 6, 3, 'Muhammad Zeeshan', '2025-02-07', '2025-02-12', '12:00:00', 2500, 'pay_PsniV56T9zeizF', 'Complete', 'Accept'),
-(4, 2, 3, 'Muhammad Zeeshan', '2025-02-08', '2025-02-08', '16:00:00', 2000, 'pay_PtBeTZyWdqSv8x', 'Complete', 'Accept'),
-(5, 2, 7, 'Sidra Batool', '2025-02-08', '2025-02-08', '16:30:00', 2000, 'pay_PtC4HGQgS6SoZu', 'Complete', 'Accept'),
-(6, 6, 3, 'Muhammad Zeeshan', '2025-02-09', '2025-02-09', '09:00:00', 2500, 'pay_PtUlwMYUQEVM8n', 'Complete', 'Cancel'),
-(7, 1, 3, 'Muhammad Zeeshan', '2025-02-09', '2025-02-20', '16:00:00', 0, '', 'Complete', 'Pending'),
-(8, 1, 7, 'Sidra Batool', '2025-02-09', '2025-03-06', '13:36:00', 0, '', 'Complete', 'Pending'),
-(9, 2, 7, 'Sidra Batool', '2025-02-12', '2025-02-12', '03:57:00', 2000, '', 'Pending', 'Pending'),
-(10, 2, 3, 'Muhammad Zeeshan', '2025-02-13', '2025-02-13', '02:57:00', 2000, '', 'Pending', 'Pending');
+(12, 9, 3, 'Muhammad Zeeshan', '2025-02-26', '2025-02-26', '00:35:00', 2000, 'pay_Q03wOOs7hpLOcg', 'Complete', 'Accept'),
+(13, 11, 3, 'Muhammad Zeeshan', '2025-02-27', '2025-02-28', '00:19:00', 2000, 'pay_Q0lWovjv6D8tqL', 'Complete', 'Pending'),
+(14, 11, 3, 'Muhammad Zeeshan', '2025-02-27', '2025-03-01', '10:32:00', 2000, 'pay_Q0lgvqt60A21W2', 'Complete', 'Accept'),
+(15, 11, 12, 'Usama Tariq', '2025-02-27', '2025-02-27', '00:42:00', 2000, 'pay_Q0mroJsi2Ncluk', 'Complete', 'Accept'),
+(16, 2, 3, 'Muhammad Zeeshan ali khanhj', '2025-04-25', '2025-05-03', '22:32:00', 2000, 'pay_QNH2PGrtZSr2DH', 'Complete', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -105,7 +102,11 @@ CREATE TABLE `doctor` (
 
 INSERT INTO `doctor` (`id`, `user_id`, `dep_id`, `specialization`, `qualification`, `experience`, `designation`, `fee`, `gender`, `contact`, `address`, `image`, `about`) VALUES
 (1, 2, 1, 'Dermatologist, Cosmetologist', 'M.B.B.S, M.C.P.S (Derma)', '8 Years', 'Senior Consultant', 2000, 'Female', '03049834989', 'House No #14 Street 4 Area Ali Town Lahore', 'female doctor.png', '<h3><strong>About Dr. Munazza Zahoor</strong></h3><p>Dr. Munazza Zahoor is a Dermatologist with 8 years of experience currently available at Online Video Consultation, Multan. You can book an in-person appointment or an online video consultation with Dr. Munazza Zahoor through oladoc.com or by calling at 0618048444.</p><p>&nbsp;</p><h4><strong>Experience</strong></h4><p>Dr. Munazza Zahoor has over 8 years of experience in her field.</p><p>&nbsp;</p><h4><strong>Qualifications</strong></h4><p>Dr. Munazza Zahoor has the following qualifications:</p><p>M.B.B.S</p><p>M.C.P.S (Derma)</p><p>&nbsp;</p><h4><strong>Services Offered</strong></h4><p>Following are some of the services offered by Dr. Munazza Zahoor:</p><ul><li>Acne Treatment</li><li>Alopecia</li><li>Antihistamine Treatment</li><li>Boil</li><li>Chemical Peel</li><li>&nbsp;</li></ul><h4><strong>Conditions Treated</strong></h4><p>Following are some of the conditions treated by Dr. Munazza Zahoor:</p><ul><li>Abscess</li><li>Acne</li><li>Acne Scars</li><li>Atopic Dermatitis (Eczema)</li><li>Eczema</li></ul>'),
-(2, 6, 1, 'Gynecologist, Obstetrician', 'MBBS, MCPS, MRCOG (UK), FRCOG (UK)', '20 Years', 'Senior Consultant', 2500, 'Female', '03049834989', 'Suite No. 3 Cantt Board Plaza Adjacent To The Mall Of Lahore Tufail Road, Lahore', 'doctor sadia.png', '<h3><strong>Experience</strong></h3><p>Dr. Sadia Sarwar has over 23 years of experience in her field.</p><p>&nbsp;</p><h3><strong>Professional memberships</strong></h3><ul><li>Pakistan Medical Comission (PMC)</li><li>&nbsp;</li></ul><h3><strong>About Dr. Sadia Sarwar</strong></h3><p>Dr. Sadia Sarwar is an Obstetrician &amp; gynaecologist practicing in Lahore. She graduated from King Edward Medical University in 1995. Later she earned her postgraduate degrees i.e MCPS and MRCOG (England). Dr. Sadia has work experience both in Pakistan and abroad. She is currently working as Assistant Professor in CMC Lahore. You can book an appointment through Oladoc!</p>');
+(2, 6, 2, 'Dentist, Obstetrician', 'MBBS, MCPS, MRCOG (UK), FRCOG (UK)', '20 Years', 'Senior Consultant', 2500, 'Female', '03049834989', 'Suite No. 3 Cantt Board Plaza Adjacent To The Mall Of Lahore Tufail Road, Lahore', 'expressive-young-woman-posing-studio.jpg', '<h3><strong>Experience</strong></h3><p>Dr. Sadia Sarwar has over 23 years of experience in her field.</p><p>&nbsp;</p><h3><strong>Professional memberships</strong></h3><ul><li>Pakistan Medical Comission (PMC)</li><li>&nbsp;</li></ul><h3><strong>About Dr. Sadia Sarwar</strong></h3><p>Dr. Sadia Sarwar is an Dentist practicing in Lahore. She graduated from King Edward Medical University in 1995. Later she earned her postgraduate degrees i.e MCPS and MRCOG (England). Dr. Sadia has work experience both in Pakistan and abroad. She is currently working as Assistant Professor in CMC Lahore. You can book an appointment through Oladoc!</p>'),
+(4, 8, 3, 'Cosmetic Dentistry, Joint Replacement', 'MBBS, FCPS, MCPS, MD, MS', '8 years', 'Consultant', 2000, 'Male', '+923001234567', '123 Main Boulevard, Lahore, Punjab, Pakistan', 'PIC.jpg', '<p>Dr.Mehtab is a renowned orthopedic surgeon with over 8 years of experience in joint replacement surgeries. He has worked at leading hospitals in Lahore.</p>'),
+(5, 9, 3, 'Joint Replacement Specialist', 'MBBS, FCPS (Ortho)', '10 years', 'Senior Consultant', 2000, 'Female', '03219876543', '456 Ortho Care, DHA Phase 5, Karachi', 'beautiful-young-female-doctor-looking-camera-office.jpg', '<p>Ayesha Khan is a highly skilled orthopedic surgeon specializing in joint replacement surgeries. With over 10 years of experience, she has successfully performed numerous complex procedures</p>'),
+(6, 10, 1, 'Cosmetologist, Acne Specialist', 'MBBS, MCPS (Dermatology)', '8 Years', 'Consultant', 2500, 'Female', '03001234567', '123 Skin Care Center, Gulberg, Lahore', 'expressive-young-woman-posing-studio.jpg', '<p>Dr. Malaika is a skilled dermatologist specializing in cosmetic treatments and acne management. With over 8 years of experience, he is dedicated to providing effective and personalized care to his patients</p>'),
+(7, 11, 2, 'Cosmetic & Restorative Dentist', 'BDS, MDS (Prosthodontics)', '8 Years', 'Senior Dentist', 2000, 'Male', '+92 300 6789012', 'F-7, Islamabad, Pakistan', 'young-handsome-physician-medical-robe-with-stethoscope.jpg', '<p>Dr. Usama Tariq is an expert in braces, Invisalign, and jaw alignment treatments, helping patients achieve a perfect smile with advanced orthodontic care.</p>');
 
 -- --------------------------------------------------------
 
@@ -129,8 +130,10 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`id`, `user_id`, `dob`, `gender`, `cnic`, `address`, `contact`, `email`) VALUES
-(1, 3, '2006-01-10', 'Male', '81302-3487239-7', 'House No 3# Johar Town', '0300989890', 'zeeshan1790@gmail.com'),
-(2, 7, '2002-02-08', 'Female', '8130254563458', 'House no. 108, Block A1, Gulberg III', '03087328789', 'sidra341@gmail.com');
+(1, 3, '2006-02-10', 'Male', '12345-6789876-5', 'House No 3# Johar Town', '03245676235', 'zeeshan1790@gmail.com'),
+(2, 7, '2002-02-08', 'Female', '8130254563458', 'House no. 108, Block A1, Gulberg III', '03087328789', 'sidra341@gmail.com'),
+(3, 12, '2000-12-12', 'Male', '4510521781217', 'lahore', '+923122121131', 'usamatariq@gmail.com'),
+(4, 12, '2000-12-12', 'Male', '4510521781217', 'lahore', '+923122121131', 'usamatariq@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -178,9 +181,17 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `role`) VALUES
 (1, 'Irshad Ali', 'irshad123', '12345', 'admin'),
 (2, 'Dr. Munazza Zahoor', 'drmunaza809', '12345', 'doctor'),
-(3, 'Muhammad Zeeshan', 'patient', '12345', 'patient'),
-(6, 'Dr. Sadia Sarwar', 'drsadia718', '12345', 'doctor'),
-(7, 'Sidra Batool', 'sidra123', '12345', 'patient');
+(3, 'Muhammad Zeeshan ali khanhj', 'patient', '12345', 'patient'),
+(6, 'Dr. Sadia Sarwar', 'sadia', '12345', 'doctor'),
+(7, 'Sidra Batool', 'sidra123', '12345', 'patient'),
+(8, 'Dr. Mehtab Ali', 'mehtab', '12345', 'doctor'),
+(9, 'Dr.Ayesha Khan', 'ayesha123', '12345', 'doctor'),
+(10, 'Dr. Malaika', 'shoaib123', '12345', 'doctor'),
+(11, 'Dr. Hamza Rafiq', 'hamza', '12345', 'doctor'),
+(12, 'Usama Tariq', 'usama', '12345', 'patient'),
+(14, 'Usama Tariq', 'tariq', '12345', 'patient'),
+(15, 'ali', 'ali', '12345', 'patient'),
+(16, 'ali ahmed', 'ahmed', '12345', 'patient');
 
 --
 -- Indexes for dumped tables
@@ -220,7 +231,8 @@ ALTER TABLE `prescription`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -230,7 +242,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `department`
@@ -242,13 +254,13 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `prescription`
@@ -260,7 +272,7 @@ ALTER TABLE `prescription`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
