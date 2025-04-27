@@ -15,7 +15,7 @@ $row=mysqli_fetch_array($result);
                   </div>
                   <div class="form-group">
                      <label>Time</label>
-                     <input type="time" name="time" value="<?php echo $row['time'];?>" required />
+                     <input type="time" name="time" min="9:00" max="18:00" value="<?php echo $row['time'];?>" required />
                   </div>
                   <div class="form-group">
                      <label>Status</label>
