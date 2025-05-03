@@ -8,7 +8,6 @@ $row=mysqli_fetch_array($result);
 		<section id="Referal-section">
             <div class="container">
                <h2>Update Department</h2>
-               <!-- Form to add a new referral -->
                <form method="post" enctype="multipart/form-data">
                   <div class="form-group">
                      <label>Department Name</label>

@@ -45,7 +45,7 @@ if(mysqli_num_rows($result)<1){
                     <input type="date" name="date" min="<?php echo date('Y-m-d');?>" required>
 
                     <label>Time:</label>
-                    <input type="time" name="time" required>
+                    <input type="time" name="time" min="9:00" max="18:00" required>
 
                     <button type="submit" name="submit">Appoint Now</button>
                 </form>
