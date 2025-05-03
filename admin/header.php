@@ -19,7 +19,6 @@ $admin=mysqli_fetch_array($result);
       <link rel="stylesheet" href="../css/doctor/manage_appointment.css">
       <link rel="stylesheet" href="../css/doctor/Referal_management.css">
       <link rel="stylesheet" href="../css/doctor/profile.css">
-      <!-- Font Awesome CDN for icons -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
       <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
       <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>

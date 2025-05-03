@@ -8,7 +8,6 @@ $row=mysqli_fetch_array($result);
 		<section id="Referal-section">
             <div class="container">
                <h2>Update Appointment</h2>
-               <!-- Form to add a new referral -->
                <form method="post">
                   <div class="form-group">
                      <label>Date</label>

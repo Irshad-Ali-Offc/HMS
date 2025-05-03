@@ -43,7 +43,8 @@ include 'header.php';
                   </div>
                   <div class="form-group">
                      <label>Time</label>
-                     <input type="time" name="time" value="<?php echo $row['time'];?>" required />
+                            <option value="" disabled="" selected="">Select a department</option>
+                     <input type="time" name="time" min="9:00" max="18:00"  value="<?php echo $row['time'];?>" required />
                   </div>
                  
                   <button type="submit" name="submit" class="add-btn">Refer Now</button>

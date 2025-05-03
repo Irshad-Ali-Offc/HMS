@@ -44,9 +44,9 @@ $age = $dobObject->diff($currentDate)->y;
 	font-size:14px;	
 }
 </style>
-
+        .
         
-        <main class="main-content">
+        <main class="main-content" id="print_data">
              
             <section id="appointments-section">
                 <h2 class="text-center">Hospital Management System</h2>
@@ -108,15 +108,31 @@ $row=mysqli_fetch_array($result);
 <?php } else{
 	echo 'No record found';	
 } ?>
+            <div class="text-center">
+            <button class="btn-submit" onClick="printdata('print_data')">Print</button>
+            </div>
             </section>
+            
             
         </main>
     </div>
 
+    </div>
+      
+         
+        </body>
+        
+        </html>
+<script>
+function printdata(e1){
+	var restorepage = document.body.innerHTML;
+	var printcontent = document.getElementById(e1).innerHTML;
+	document.body.innerHTML = printcontent;
+	window.print();
+	document.body.innerHTML=restorepage;
+}
 
-</body>
-
-</html>
+</script>
 <?php
 if(isset($_POST['cancel'])){
 	$id=$_POST['id'];
