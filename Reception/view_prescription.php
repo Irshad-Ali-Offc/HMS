@@ -41,6 +41,17 @@
 	font-size:14px;	
 }
 </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Prescriptions</title>
+</head>
+<body>
+    
+</body>
+</html>
 
 <main class="main-content" id="print_data">
     <section id="appointments-section">

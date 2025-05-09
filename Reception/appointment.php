@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Make an Appointment</title>
+  <title>Appointment</title>
   <style>
     body {
       font-family: Arial, sans-serif;

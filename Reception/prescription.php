@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Recent Prescriptions</title>
+  <title>Prescriptions</title>
   <style>
     body {
   font-family: Arial, sans-serif;
