@@ -1,7 +1,77 @@
 <?php
 include 'header.php';
+include 'navbar.php';
 ?>
-
+<style>
+    
+    #profile-section {
+      padding: 20px;
+      margin-top: 5rem;
+        
+        height: auto;
+        width: auto;
+      
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+      border-radius: 10px;
+      max-width: 1200px;
+    
+    }
+    
+    #profile-details,
+    #profile-form {
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 5px;
+      gap: 15px;
+      box-shadow: 0 4px 8px rgb(156, 60, 60);
+      border-radius: 10px;
+    
+    }
+    
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+    
+    
+    
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #28a745;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    #cancel {
+      background-color: rgb(236, 134, 134);
+      width: 7rem;
+      cursor: pointer;
+      border: 2px solid black;
+      border-radius: 1rem;
+    }
+    #cancel:hover {
+      background-color: red;
+    
+      transform: scale(1.05); 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    }
+    #profile-form button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    }
+    #edit-profile:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    }
+    
+    
+    </style>
+    
 
         
         <main class="main-content">
@@ -50,6 +120,7 @@ include 'header.php';
             
         </main>
     </div>
+
 </html>
 <?php
 if(isset($_POST['submit'])){
