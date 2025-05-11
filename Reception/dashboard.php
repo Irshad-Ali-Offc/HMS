@@ -68,6 +68,16 @@ include 'navbar.php';
           <p>Admitted Patients</p>
         </div>
       </div>
+      <div class="stat-card">
+      <div class="stat-icon available">
+      <i class="fas fa-ban"></i> <i class="fas fa-bed"></i> 
+        </div>
+        <div class="stat-info">
+          <h3>23</h3>
+          <p>Available Beds</p>
+        </div>
+      </div>
+
       <div class="stat-card add-appointment">
         <div class="stat-icon appointments">
         <i class="fas fa-calendar-check"></i>

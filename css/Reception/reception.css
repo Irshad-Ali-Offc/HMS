@@ -214,7 +214,7 @@
   .stat-icon.patients {
     background: linear-gradient(135deg, #4cc9f0, #4895ef);
   }
-  .stat-icon.doctors {
+  .stat-icon.doctors {  
     background: linear-gradient(135deg, #000e13, #145daf);
   }
 
@@ -231,6 +231,9 @@
   }
   .stat-icon.Admitted {
     background: linear-gradient(135deg, #7d03ce, #fa0425);
+  }
+  .stat-icon.available {
+    background: linear-gradient(135deg, #cdc6d1, #05c7e0);
   }
   .stat-icon.Admitted {
     background: linear-gradient(135deg, #7d03ce, #fa0425);
