@@ -1,8 +1,8 @@
 .container {
-    width: 80vw; /* Adjusted width for better fitting */
+    width: 80vw; 
     height: auto;
     margin: 20px auto;
-    padding: 20px; /* Reduced padding */
+    padding: 20px;
     background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: 1em;
@@ -74,7 +74,7 @@ textarea {
 }
 
 .ck-editor__editable[role="textbox"] {
-    /* editing area */
+
     min-height: 300px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -145,7 +145,7 @@ textarea {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for Add/Subtract Buttons */
+
 .add-to-prescription, .subtract-from-prescription {
     margin-left: 40px;
     padding: 5px 10px;

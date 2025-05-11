@@ -84,9 +84,21 @@ include 'header.php';
   <form class="register-form">
     <div class="form-group">
       <label for="fullname">Full Name</label>
-      <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter full name" 
+       pattern="[A-Za-z ]+" 
+       title="Only letters and spaces are allowed" 
+       required>
+
     </div>
 
+    <div class="form-group">
+      <label for="CNIC">CNIC</label>
+      <input type="text" id="cnic" name="cnic" placeholder="e.g. 45105-2121213-6" 
+       pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" 
+       title="CNIC must be in the format 45105-2121213-6" 
+       required>
+
+    </div>
     <div class="form-group">
       <label for="gender">Gender</label>
       <select id="gender" name="gender" required>
@@ -102,14 +114,12 @@ include 'header.php';
       <input type="date" id="dob" name="dob" required>
     </div>
 
-    <div class="form-group">
-      <label for="CNIC">CNIC</label>
-      <input type="text' id="cnic" name="cnic" placeholder="e.g. 45105-21212134-6" required>
-    </div>
 
     <div class="form-group">
       <label for="contact">Contact Number</label>
-      <input type="tel" id="contact" name="contact" placeholder="e.g. 0300-1234567" required>
+      <input type="tel" id="contact" name="contact" placeholder="e.g. 03001234567" pattern="\d{11}" maxlength="11" required>
+
+
     </div>
 
     <div class="form-group">
