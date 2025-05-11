@@ -214,6 +214,9 @@
   .stat-icon.patients {
     background: linear-gradient(135deg, #4cc9f0, #4895ef);
   }
+  .stat-icon.doctors {
+    background: linear-gradient(135deg, #000e13, #145daf);
+  }
 
   .stat-icon.appointments {
     background: linear-gradient(135deg, #f8961e, #f3722c);
@@ -224,8 +227,38 @@
   }
 
   .stat-icon.revenue {
-    background: linear-gradient(135deg, #43aa8b, #4d908e);
+    background: linear-gradient(135deg, #03f03e, hsl(175, 90%, 42%));
   }
+  .stat-icon.Admitted {
+    background: linear-gradient(135deg, #7d03ce, #fa0425);
+  }
+  .stat-icon.Admitted {
+    background: linear-gradient(135deg, #7d03ce, #fa0425);
+  }
+  .stat-icon.pending {
+    background: linear-gradient(135deg, #7d03ce, #ec94a0);
+  }
+
+  .stat-card.add-appointment{
+    
+    
+    font-size: bold;
+    cursor: pointer;
+  }
+  .add-appointment:hover{
+    background: linear-gradient(135deg, #03f03e, hsl(175, 90%, 42%));
+    
+  }
+    .page-header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .page-header h1 {
+            color: #2c3e50;
+            font-size: 28px;
+        }
 
   .stat-info h3 {
     font-size: 1.8rem;

@@ -54,6 +54,9 @@
 </html>
 
 <main class="main-content" id="print_data">
+     <div class="page-header">
+            <h1>Patient Presctiption</h1>
+        </div>
     <section id="appointments-section">
         <h2 class="text-center">Hospital Management System</h2>
         <center>

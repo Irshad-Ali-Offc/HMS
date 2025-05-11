@@ -23,7 +23,7 @@
 
 h2 {
   text-align: center;
-  /* color: #2c3e50; */
+  
 }
 
 table {
@@ -65,6 +65,9 @@ table th, table td {
     
     ?>
     <main class="main-content">
+       <div class="page-header">
+            <h1>Patient Prescriptions</h1>
+        </div>
   <div class="container">
     <h2>Recent Prescriptions</h2>
     <table>
@@ -98,7 +101,6 @@ table th, table td {
             <a href="" class="btn" target="_blank">Print</a>
           </td>
         </tr>
-        <!-- Add more rows as needed -->
       </tbody>
     </table>
   </div>

@@ -85,6 +85,9 @@ include 'navbar.php';
 </html>
         
         <main class="main-content">
+           <div class="page-header">
+            <h1>My Profile</h1>
+        </div>
              
             <section id="profile-section">
             <?php

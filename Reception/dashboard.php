@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MediCare | Reception</title>
 
-  
-  
-  
-  <style>
-   
-  </style>
 </head>
 <body>
 <?php 
@@ -34,7 +28,7 @@ include 'navbar.php';
       </div>
       
       <div class="stat-card">
-        <div class="stat-icon revenue">
+        <div class="stat-icon doctors">
         <i class="fa-solid fa-user-doctor"></i>
 
         </div>
@@ -66,7 +60,7 @@ include 'navbar.php';
       
    
       <div class="stat-card">
-      <div class="stat-icon patients">
+      <div class="stat-icon Admitted">
       <i class="fa-solid fa-bed"></i>
         </div>
         <div class="stat-info">
@@ -74,8 +68,8 @@ include 'navbar.php';
           <p>Admitted Patients</p>
         </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-icon revenue">
+      <div class="stat-card add-appointment">
+        <div class="stat-icon appointments">
         <i class="fas fa-calendar-check"></i>
 
         </div>
@@ -83,11 +77,11 @@ include 'navbar.php';
           <h1 style="color: green; text-align: center;">
           +
         </h1>
-        <p>New Appointment</p>
+        <h4>Make Appointment</h4>
     </div>
 </div>
 <div class="stat-card">
-  <div class="stat-icon revenue">
+  <div class="stat-icon pending">
     <i class="fas fa-dollar-sign"></i>
   </div>
   <div class="stat-info">
@@ -97,7 +91,7 @@ include 'navbar.php';
 </div>
 <div class="stat-card">
         <div class="stat-icon revenue">
-        <i class="fas fa-dollar-sign"></i>
+        <i class="fa-solid fa-file-invoice-dollar"></i>
 
         </div>
         <div class="stat-info">

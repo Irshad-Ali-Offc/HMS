@@ -77,9 +77,11 @@ include 'header.php';
 </body>
 </html>
 <div class="main-content">
+    <div class="page-header">
+            <h1>Patient Registration</h1>
+        </div>
   
   <form class="register-form">
-    <h2>Register New Patient</h2>
     <div class="form-group">
       <label for="fullname">Full Name</label>
       <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required>

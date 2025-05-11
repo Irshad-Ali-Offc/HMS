@@ -211,8 +211,10 @@
     include 'navbar.php';   
 ?>
     <main class="main-content">
+         <div class="page-header">
+            <h1>MediCare Reports</h1>
+        </div>
     <div class="container">
-        <h1>Reports Creation</h1>
         
         <div class="report-controls">
             <div class="report-type">
@@ -288,7 +290,6 @@
                 <p>No report generated yet. Please select report parameters and click "Generate Report".</p>
             </div>
             
-            <!-- Sample report content (hidden by default) -->
             <div style="display: none;">
                 <div class="report-header">
                     <h2 class="hospital-name">MediCare HMS</h2>

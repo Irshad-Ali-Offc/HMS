@@ -53,10 +53,17 @@
       border: none;
       border-radius: 4px;
       font-size: 16px;
+      max-width: 200px;
+      border-radius: 23px;
+      cursor: pointer;
+      
     }
 
     button:hover {
-      background-color: #218838;
+        background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    font-size: bold;
     }
   </style>
 </head>
@@ -66,37 +73,38 @@
     include 'navbar.php';
     ?>
 <main class="main-content">
+   <div class="page-header">
+            <h1>Make an Appointment</h1>
+        </div>
   <div class="form-container">
-    <h2>Book an Appointment</h2>
     <form action="" method="POST">
       
+      <label for="cnic">CNIC:</label>
+      <input type="text" id="cnic" name="cnic" placeholder="fetch using cnic "required>
       <label for="name">Patient Name:</label>
       <input type="text" id="name" name="name" required>
+      
+       <label>Department</label>
+                  <select name="department" id="department" required>
+                    <option value="" disabled selected>Select a department</option>
+                    <option value="1">Cardiology</option>
+                    <option value="2">Neurology</option>
+                  </select>
+                   <label>Doctor</label>
+                  <select name="doctor" id="doctor" required>
+                    <option value="" disabled selected>Select a doctor</option>
+                    <option value="1">Dr. Ahmed</option>
+                    <option value="2">Dr. Sana</option>
+                  </select>
+            <label for="date">Appointment Date:</label>
+            <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" required>
+      
+            <label for="time">Appointment Time:</label>
+            <input type="time" id="time" name="time" min="09:00" max="18:00" required>
+            <label for="fee">Consultation Fee:</label>
+        <input type="text" name="fee" value="1000" readonly placeholder="Consultation Fee">
 
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" name="dob" required>
-
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender" required>
-        <option value="" disabled selected>Select gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <label for="contact">Contact Number:</label>
-      <input type="text" id="contact" name="contact" required>
-
-      <label for="address">Address:</label>
-      <textarea id="address" name="address" rows="3" required></textarea>
-
-      <label for="date">Appointment Date:</label>
-      <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" required>
-
-      <label for="time">Appointment Time:</label>
-      <input type="time" id="time" name="time" min="09:00" max="18:00" required>
-
-      <button type="submit">Submit Appointment</button>
+      <button type="submit">Pay Now</button>
     </form>
   </div>
   </main>
