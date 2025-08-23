@@ -23,7 +23,8 @@ $row=mysqli_fetch_array($result);
 	height:40px;
 	width:150px;
 	font-size:20px;
-	background-color:#007BFF;	
+	background-color:#007BFF;
+    margin-bottom: 20px;
 }
 .designation{
 	float:right;	

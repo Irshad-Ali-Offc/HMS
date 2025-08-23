@@ -31,7 +31,7 @@ include 'header.php';
 					  $sql="select patient.*, users.name, date, time, appointment.id, appointment.patient_id from patient INNER JOIN users on users.id=patient.user_id INNER JOIN appointment on patient.user_id=appointment.patient_id AND date_format(appointment.date,'%Y-%m-%d')='$date' AND status='Accept' AND doctor_id='".$doctor['id']."' where users.name LIKE '%$keyword%'"; 
 				  }
 				  else{
-					 $sql="select patient.*, users.name, date, time, appointment.id, appointment.patient_id from patient INNER JOIN users on users.id=patient.user_id INNER JOIN appointment on patient.user_id=appointment.patient_id AND date_format(appointment.date,'%Y-%m-%d')='$date' AND status='Accept' AND doctor_id='".$doctor['id']."'"; 
+					 $sql="select patient.*, users.name, date, time, appointment.id, appointment.patient_id from patient INNER JOIN users on users.id=patient.user_id INNER JOIN appointment on patient.user_id=appointment.patient_id AND date_format(appointment.date,'%Y-%m-%d')='$date' AND status='Accept' AND doctor_id='".$doctor['id']."' ORDER BY appointment.time desc";
 				  }
 				  $result=mysqli_query($con,$sql);
 				  if(mysqli_num_rows($result)>0){

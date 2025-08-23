@@ -19,6 +19,7 @@ $admin=mysqli_fetch_array($result);
       <link rel="stylesheet" href="../css/doctor/manage_appointment.css">
       <link rel="stylesheet" href="../css/doctor/Referal_management.css">
       <link rel="stylesheet" href="../css/doctor/profile.css">
+      <link rel="stylesheet" href="../css/admin/home.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
       <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
       <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
@@ -31,18 +32,22 @@ $admin=mysqli_fetch_array($result);
          <nav>
             <ul>
                <li>
-                  <img src="../image/logo.png" alt="Hospital Logo" class="nav-logo">
-                  <span class="hospital-name">Medicare</span>
+                  <img src="../image/logo.png" alt="MediCare" class="nav-logo">
+                  <!-- <span class="hospital-name">Medicare</span> -->
                </li>
                <li><a href="home.php">Dashboard</a></li>
                <li><a href="department.php">Departments</a></li>
                <li><a href="doctor.php">Doctors</a></li>
                <li><a href="patient.php">Patients</a></li>
+                <li><a href="pharmacist.php">Pharmacist</a></li>
+                <li><a href="receptionist.php">Receptionist</a></li>
                <li><a href="appointment.php">Appointments</a></li>
                <li><a href="profile.php">Profile</a></li>
                <li><a href="logout.php">Logout</a></li>
                <li>
-                  <img src="../image/userlogo.png" alt="User Icon" class="user-icon">
+                  <a href="profile.php"> 
+                     <img src="../image/userlogo.png" alt="User Icon" class="user-icon">
+                  </a>
                </li>
             </ul>
          </nav>

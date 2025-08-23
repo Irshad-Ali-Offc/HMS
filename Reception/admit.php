@@ -141,7 +141,7 @@
         <div class="tab-content " id="admission">
             <div class="card">
 
-                <form>
+                <form method="post">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="patient-id">Patient CNIC</label>
@@ -151,21 +151,21 @@
 
                         </div>
                         <div class="form-group">
-                            <label for="name">Patient Name:</label>
-                            <input type="text" id="fullname" name="fullname" class="form-control"
+                            <label for="patient-name">Patient Name:</label>
+                            <input type="text" id="patient-name" name="fullname" class="form-control"
                                 placeholder="Enter full name" pattern="[A-Za-z ]+"
                                 title="Only letters and spaces are allowed" required>
                         </div>
                         <div class="form-group">
                             <label for="admission-date">Admission Date</label>
-                            <input type="date" id="admission-date" class="form-control" required>
+                            <input type="date" name="admit_date" id="admission-date" class="form-control" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="ward">Ward/Unit</label>
-                            <select id="ward" class="form-control" required>
+                            <select id="ward" name="ward" class="form-control" required>
                                 <option value="">Select Ward/Unit</option>
                                 <option value="general">General Ward</option>
                                 <option value="icu">ICU</option>
@@ -175,23 +175,23 @@
                         </div>
                         <div class="form-group">
                             <label for="bed">Bed Number</label>
-                            <input type="text" id="bed" class="form-control" placeholder="Enter bed number" required/>
+                            <input type="text" id="bed" name="bed" class="form-control" placeholder="Enter bed number" required/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="admitting-doctor">Admitting Doctor</label>
-                        <input type="text" id="admitting-doctor" class="form-control" placeholder="Enter doctor's name"
+                        <input type="text" id="admitting-doctor" name="doctor_name" class="form-control" placeholder="Enter doctor's name"
                             pattern="[A-Za-z ]+" title="Only letters and spaces are allowed" required/>
                     </div>
 
                     <div class="form-group">
                         <label for="admission-notes">Admission Notes</label>
-                        <textarea id="admission-notes" class="form-control" rows="4"
+                        <textarea id="admission-notes" name="notes" class="form-control" rows="4"
                             placeholder="Enter admission notes"></textarea>
                     </div>
 
-                    <button type="submit" class="btn">Admit Patient</button>
+                    <button type="submit" name="submit" class="btn">Admit Patient</button>
                 </form>
             </div>
 
@@ -210,39 +210,80 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                          $i=1000;
+                          $sql="select * from admin_patient where status='admit' order by id DESC";
+                          $result=mysqli_query($con,$sql);
+                          while($row=mysqli_fetch_array($result)){
+                          ?>
                             <tr>
-                                <td>P10023</td>
-                                <td>John Smith</td>
-                                <td>General Ward</td>
-                                <td>G12</td>
-                                <td>2023-05-15</td>
-                                <td>Dr. Williams</td>
+                                <td>P<?php echo $i++;?></td>
+                                <td><?php echo $row['name'];?></td>
+                                <td><?php echo $row['ward'];?></td>
+                                <td><?php echo $row['bed'];?></td>
+                                <td><?php echo $row['admit_date'];?></td>
+                                <td><?php echo $row['doctor_name'];?></td>
                             </tr>
-                            <tr>
-                                <td>P10045</td>
-                                <td>Sarah Johnson</td>
-                                <td>Maternity</td>
-                                <td>M05</td>
-                                <td>2023-05-16</td>
-                                <td>Dr. Anderson</td>
-                            </tr>
-                            <tr>
-                                <td>P10067</td>
-                                <td>Michael Brown</td>
-                                <td>ICU</td>
-                                <td>ICU03</td>
-                                <td>2023-05-17</td>
-                                <td>Dr. Roberts</td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
-
     </div>
-
 </body>
-
 </html>
+<?php
+if(isset($_POST['submit'])){
+    $cnic=$_POST['cnic'];
+    $fullname=$_POST['fullname'];
+    $admit_date=$_POST['admit_date'];
+    $ward=$_POST['ward'];
+    $bed=$_POST['bed'];
+    $doctor_name=$_POST['doctor_name'];
+    $notes=$_POST['notes'];
+
+    $sql="select * from admin_patient where status='admit' AND cnic='$cnic'";
+    $result=mysqli_query($con,$sql);
+    if(mysqli_num_rows($result)>0)
+    {
+        echo '<script>alert("This patient is already admitted")</script>';
+    }
+    else{
+        $sql="insert into admin_patient values('','$fullname','$cnic','$admit_date','','$ward','$bed','$doctor_name','$notes','admit','','')";
+        $result=mysqli_query($con,$sql);
+        if($result){
+            echo '<script>window.location.href="admit.php"
+                    alert("Patient admitted successfully")</script>';
+        }
+        else{
+            echo '<script>alert("Sorry try again later")</script>';	
+        }
+    }
+    
+}
+?>
+<script>
+$(document).ready(function() {
+    $('#cnic').on('blur', function() {
+        var cnic = $(this).val();
+
+        if (cnic !== '') {
+            $.ajax({
+                url: 'get_patient.php',
+                type: 'POST',
+                data: { cnic: cnic },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.error) {
+                        alert(response.error);
+                        $('#patient-name').val('');
+                    } else {
+                        $('#patient-name').val(response.name);
+                    }
+                }
+            });
+        }
+    });
+});
+</script>

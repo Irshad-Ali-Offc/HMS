@@ -101,10 +101,14 @@ html {
   margin-bottom: 10px;
 }
 
+.profile-picture{
+  border-bottom: 2px solid white ;
+}
 
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin-top: 2rem;
 }
 
 .sidebar ul li {
@@ -120,26 +124,15 @@ html {
   padding: 1rem;
   border-radius: 1rem;
   transition: all 0.7s;
-  background-color: #007bff;
+  /* background-color: #007bff; */
   color: white;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px rgba(12, 0, 0, 0.2);
 }
 
 .sidebar ul li a:hover {
-  background-color: #bd3636;
+  background-color:rgba(12, 0, 0, 0.2);
 }
 
-.toggle-btn {
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 1rem;
-  color: #fff;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 3;
-}
 
 .main-content {
   width: 80%;
@@ -162,27 +155,24 @@ html {
 .status-cards {
   margin-top: 3.5rem;
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
   margin-bottom: 20px;
+  display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+  
 }
 
 .card {
-  background-color: #b7c0d1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
-  border-radius: 3rem;
+  background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  border-radius: 0.4rem;
   padding: 20px;
   text-align: center;
-  flex: 1;
-  transition: all 0.5s ease;
-  cursor: pointer;
+ 
+
 }
-.card:hover {
-  background-color: #4094ee; 
-  color: white; 
-  transform: scale(1.05); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+
 
 .card h3 {
   font-size: 28px;
@@ -194,14 +184,9 @@ html {
   font-size: 16px;
   color: #555;
 }
-.card p:hover {
-  color: white;
-}
 
 
-.hidden {
-  display: none;
-}
+
 
 section {
   margin-top: 5rem;
@@ -318,18 +303,10 @@ button {
 }
 
 #cancel {
-  background-color: rgb(236, 134, 134);
-  width: 7rem;
-  cursor: pointer;
-  border: 2px solid black;
-  border-radius: 1rem;
+color:white;
+background-color: red;
 }
-#cancel:hover {
-  background-color: red;
 
-  transform: scale(1.05); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
-}
 #profile-form button:hover {
   background-color: #45a049;
   transform: scale(1.05);
@@ -416,254 +393,3 @@ button.pay-now:hover {
   overflow-x: auto; 
 
 }
-
-@media (max-width: 1024px) {
-  .dashboard-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 0;
-  }
-
-  .sidebar {
-    width: 100%;
-
-    height: auto;
-    position: relative;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow:hidden;
-  }
-  #welcome-section {
-    overflow: hidden;
-  }
-  .sidebar ul {
-    width: 26rem;
-    text-align: center;
-  }
-  .main-content {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .status-cards {
-    flex-direction: column;
-    gap: 10px;
-  }
- 
-  #profile-form input,
-  #profile-form select,
-  #profile-form textarea {
-    width: 100%;
-	box-sizing:border-box;
-  }
-
-  #profile-form #edit-profile,
-  #new-appointment {
-    width: 90%;
-  }
-  #profile-form button {
-    width: 10rem;
-  }
-  #edit-profile {
-    width: 7rem;
-  }
-  #new-appointment {
-    width: 11rem;
-  }
- 
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    text-align: center;
-  }
-
-  .status-cards {
-    flex-direction: column;
-  }
-
-  .card {
-    margin-bottom: 10px;
-  }
-
-  #welcome-section {
-    text-align: center;
-  }
-
-  #profile-section {
-    width: auto;
-    height: auto;
-    padding: 10px;
-    
-  }
-  #profile-form button {
-    width: 10rem;
-  }
-  #new-appointment {
-    width: 11rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    position: relative;
-    font-size: 14px;
-    padding: 10px;
-    overflow: hidden;
-    transform: translateX(-100%); 
-
-  }
-  .toggle-btn {
-    display: block; 
-   top:0;
-    left: 0;
-   
-   width: 3rem;
-   height: 3rem;
-}
-.main-content {
-    margin-left: 0;
-    margin-top: -35em;
-    
-}
-  .sidebar ul {
-    width: 20rem;
-    text-align: center;
-  }
-
-  .status-cards {
-    flex-direction: column;
-  }
-
-  .card {
-    padding: 10px;
-  }
-
-  #profile-form button {
-    width: 5rem;
-  }
-  #edit-profile {
-    width: 7rem;
-  }
-  #new-appointment {
-    width: 11rem;
-  }
-  #appointments-section{
-    height: auto;
-    width: auto;
-  }
-  
-  #prescription{
-    height: auto;
-    width: auto;
-    
-  }
-}
-
-@media (max-width: 768px) {
-  #welcome-section p {
-    font-size: 14px; 
-    margin: 10px 0;
-  }
-  #appointments-section th:nth-child(4),
-  #appointments-section td:nth-child(4) {
-    max-width: 10rem;
-  }
-
-  
-
-  #billing-section {
-    padding: 15px;
-    margin: 15px;
-    width: 100%;
-  }
-
-  #billing-table {
-    font-size: 14px;
-  }
-
-  button {
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-
-  #billing-section h2 {
-    font-size: 20px;
-  }
-
-  
-  #billing-table {
-    display: block;
-    width: 100%;
-  }
-
-  #billing-table thead {
-    display: none; 
-  }
-
-  #billing-table tr {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-
-  #billing-table td {
-    display: flex;
-    justify-content: space-between;
-    border: none;
-    padding: 10px 20px;
-  }
-
-  #billing-table td:first-child {
-    font-weight: bold;
-    width: 50%;
-  }
-
-  #billing-table td:last-child {
-    text-align: right;
-  }
-
-  
-  button {
-    width: 100%;
-    padding: 12px;
-  }
-}
-
-
-@media (max-width: 480px) {
-
-  #billing-section {
-    height: auto;
-    width: auto;
-    padding: 10px;
-    
-  }
-
-  #billing-table {
-    font-size: 12px;
-  }
-
-  button {
-    padding: 5px 8px;
-    font-size: 10px;
-  }
-
-  #billing-section h2 {
-    font-size: 18px;
-  }
-
-  #billing-table th,
-  #billing-table td {
-    padding: 8px;
-  }
-
-
-  .billing-section {
-    overflow-x: auto;
-  }
-}
-

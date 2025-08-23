@@ -128,24 +128,37 @@ include 'navbar.php';
     
     <div class="stats-container">
         <div class="stat-card">
-            <h3>Today's Prescriptions</h3>
-            <div class="value">42</div>
-            <div class="change positive">↑ 12% from yesterday</div>
+            <h3><i class="fas fa-calendar-check" style="color: green; font-size:large"></i> Today's Appointment</h3>
+            
+            <?php
+            $sql = "SELECT * FROM appointment WHERE date = CURDATE()";
+            $result=mysqli_query($con,$sql);
+            ?>
+            <div class="value"><?php echo mysqli_num_rows($result);?></div>
         </div>
         <div class="stat-card">
-            <h3>Completed Today</h3>
-            <div class="value">36</div>
-            <div class="change positive">↑ 8% from yesterday</div>
+            <h3>  <i class="fas fa-check-circle" style="color: green; font-size:large"></i> Completed Today</h3>
+            <?php
+            $sql = "SELECT * FROM prescription WHERE date = CURDATE()";
+            $result=mysqli_query($con,$sql);
+            ?>
+            <div class="value"><?php echo mysqli_num_rows($result);?></div>
         </div>
         <div class="stat-card">
-            <h3>Pending Prescriptions</h3>
-            <div class="value">6</div>
-            <div class="change negative">↓ 2 from yesterday</div>
+            <h3><i class="fas fa-file-prescription" style="color: yellow; font-size:large" ></i> Pending Prescriptions</h3>
+            <?php
+            $sql = "SELECT * FROM prescription WHERE prescription=''";
+            $result=mysqli_query($con,$sql);
+            ?>
+            <div class="value"><?php echo mysqli_num_rows($result);?></div>
         </div>
         <div class="stat-card">
-            <h3>Low Stock Items</h3>
-            <div class="value">5</div>
-            <div class="change negative">Needs attention</div>
+            <h3> <i class="fas fa-exclamation-triangle"  style="color: red; font-size:large"></i> Low Stock Items</h3>
+            <?php
+            $sql = "SELECT * FROM medication WHERE quantity<10";
+            $result=mysqli_query($con,$sql);
+            ?>
+            <div class="value"><?php echo mysqli_num_rows($result);?></div>
         </div>
     </div>
     
@@ -161,56 +174,42 @@ include 'navbar.php';
                     <th>Prescription ID</th>
                     <th>Patient</th>
                     <th>Doctor</th>
-                    <th>Status</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                $i=1000;
+                $sql="SELECT 
+                p.id AS prescription_id,
+                u_patient.name AS patient_name,
+                u_doctor.name AS doctor_name,
+                p.date AS prescription_date, 
+                appointment_id
+                FROM 
+                    prescription p
+                JOIN 
+                    patient pt ON p.patient_id = pt.id
+                JOIN 
+                    users u_patient ON pt.user_id = u_patient.id
+                JOIN 
+                    doctor d ON p.doctor_id = d.id
+                JOIN 
+                    users u_doctor ON d.user_id = u_doctor.id";
+                $result=mysqli_query($con,$sql);
+                while($row=mysqli_fetch_array($result)){
+                ?>
                 <tr>
-                    <td>#RX-10045</td>
-                    <td>John Smith</td>
-                    <td>Dr. Sarah Johnson</td>
-                    <td><span class="status completed">Completed</span></td>
-                </tr>
-                <tr>
-                    <td>#RX-10044</td>
-                    <td>Maria Garcia</td>
-                    <td>Dr. Robert Chen</td>
-                    <td><span class="status completed">Completed</span></td>
-                </tr>
-                <tr>
-                    <td>#RX-10043</td>
-                    <td>David Wilson</td>
-                    <td>Dr. Emily Park</td>
-                    <td><span class="status pending">Pending</span></td>
-                </tr>
-                <tr>
-                    <td>#RX-10042</td>
-                    <td>Lisa Brown</td>
-                    <td>Dr. Michael Lee</td>
-                    <td><span class="status cancelled">Cancelled</span></td>
-                </tr>
+                <td>#RX-<?php echo $i++;?></td>
+                <td><?php echo $row['patient_name'];?></td>
+                <td><?php echo $row['doctor_name'];?></td>
+                <td><?php echo date('d M Y',strtotime($row['prescription_date']));?></td>
+                  </tr> 
+            <?php } ?>
             </tbody>
         </table>
     </div>
     
-    <div class="quick-actions">
-        <div class="action-btn">
-            <i class="fas fa-plus-circle"></i>
-            <span>New Prescription</span>
-        </div>
-        <div class="action-btn">
-            <i class="fas fa-search"></i>
-            <span>Check Stock</span>
-        </div>
-        <div class="action-btn">
-            <i class="fas fa-file-alt"></i>
-            <span>Generate Report</span>
-        </div>
-        <div class="action-btn">
-            <i class="fas fa-bell"></i>
-            <span>Low Stock Alerts</span>
-        </div>
-    </div>
 </main>
 </body>
 </html>

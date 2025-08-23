@@ -124,8 +124,9 @@ include 'dbc.php';
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password"
                         placeholder="Enter your password" required>
+                    <a href="forgot_password.php" class="float-end text-decoration-none">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn btn-login" name="login">Login</button>
+                <button type="submit" class="btn btn-login mt-3" name="login">Login</button>
 
                 <div class="signup-link">
                     <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
@@ -197,6 +198,12 @@ if (isset($_POST['login'])) {
         } else if ($row['role'] == 'patient') {
             $_SESSION['patient'] = $username;
             echo '<script>window.location.href="patient/home.php"</script>';
+        } else if ($row['role'] == 'pharmacist') {
+            $_SESSION['pharmacist'] = $username;
+            echo '<script>window.location.href="pharmacy/home.php"</script>';
+        } else if ($row['role'] == 'receptionist') {
+            $_SESSION['receptionist'] = $username;
+            echo '<script>window.location.href="reception/home.php"</script>';
         }
 
 

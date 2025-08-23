@@ -61,8 +61,8 @@
   </style>
   
 <?php 
-include 'navbar.php';
 include 'header.php';
+include 'navbar.php';
 
 ?>
 <!DOCTYPE html>
@@ -71,6 +71,23 @@ include 'header.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration</title>
+  <script src="../js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#username').on('blur', function(){
+        var username = $(this).val();
+        if(username.length > 0){
+            $.post('check_username.php', {username: username}, function(data){
+                if(data === 'taken'){
+                    $('#username-error').text('Username already exists. Please choose another.');
+                } else {
+                    $('#username-error').text('');
+                }
+            });
+        }
+    });
+});
+</script>
 </head>
 <body>
   
@@ -81,10 +98,10 @@ include 'header.php';
             <h1>Patient Registration</h1>
         </div>
   
-  <form class="register-form">
+  <form method="post" class="register-form">
     <div class="form-group">
       <label for="fullname">Full Name</label>
-      <input type="text" id="fullname" name="fullname" placeholder="Enter full name" 
+      <input type="text" id="fullname" name="name" placeholder="Enter full name" 
        pattern="[A-Za-z ]+" 
        title="Only letters and spaces are allowed" 
        required>
@@ -99,6 +116,15 @@ include 'header.php';
        required>
 
     </div>
+      <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter username" required>
+      <span id="username-error" style="color:red;"></span>
+    </div>
+      <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required>
+    </div>
     <div class="form-group">
       <label for="gender">Gender</label>
       <select id="gender" name="gender" required>
@@ -111,7 +137,7 @@ include 'header.php';
 
     <div class="form-group">
       <label for="dob">Date of Birth</label>
-      <input type="date" id="dob" name="dob" required>
+      <input type="date" id="dob" name="dob" max="<?php echo date('Y-m-d');?>" required>
     </div>
 
 
@@ -133,6 +159,38 @@ include 'header.php';
     </div>
 
    
-    <button type="submit">Register Patient</button>
+    <button type="submit" name="submit">Register Patient</button>
   </form>
 </div>
+<?php
+if(isset($_POST['submit'])){
+    $name=$_POST['name'];
+    $cnic=$_POST['cnic'];
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    $gender=$_POST['gender'];
+    $dob=$_POST['dob'];
+    $contact=$_POST['contact'];
+    $email=$_POST['email'];
+    $address=$_POST['address'];
+    $sql="insert into users values('','$name','$username','$password','patient')";
+	$result=mysqli_query($con,$sql);
+	$user_id=mysqli_insert_id($con);
+  
+// Check for duplicate username
+$check = mysqli_query($con, "SELECT * FROM users WHERE username='$username'");
+if(mysqli_num_rows($check) > 0){
+    echo '<script>alert("Username already exists. Please choose another.");</script>';
+} else {
+    
+	$sql="insert into patient values('','$user_id','$dob','$gender','$cnic','$address','$contact','$email')";
+	$result=mysqli_query($con,$sql);
+	if($result){
+		echo '<script>window.location.href="patient_registration.php"
+				alert("Patient added successfully")</script>';
+	}
+	else{
+		echo '<script>alert("Sorry try again later")</script>';	
+	}
+}}
+?>

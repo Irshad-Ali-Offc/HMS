@@ -30,10 +30,10 @@ include 'header.php';
 				  $i=1;
 				  if(isset($_POST['search'])){
 					  $keyword=$_POST['keyword'];
-					  $sql="select appointment.*, users.name as doctor_name from appointment INNER JOIN users on users.id=appointment.doctor_id where users.name  LIKE '%$keyword%' OR patient_name LIKE '%$keyword%' OR fee LIKE '%$keyword%' OR status LIKE '%$keyword%' OR pay_status LIKE '%$keyword%'";
+					  $sql="select appointment.*, users.name as doctor_name, address from appointment INNER JOIN users on users.id=appointment.doctor_id INNER JOIN patient on appointment.patient_id=patient.id where users.name  LIKE '%$keyword%' OR patient_name LIKE '%$keyword%' OR fee LIKE '%$keyword%' OR status LIKE '%$keyword%' OR pay_status LIKE '%$keyword%'";
 				  }
 				  else{
-				  $sql="select appointment.*, users.name as doctor_name, address from appointment INNER JOIN users on users.id=appointment.doctor_id INNER JOIN patient on appointment.patient_id=patient.user_id ORDER BY appointment.date ASC";
+				  $sql="select appointment.*, users.name as doctor_name, address from appointment INNER JOIN users on users.id=appointment.doctor_id INNER JOIN patient on appointment.patient_id=patient.id ORDER BY appointment.id DESC";
 				  }
 				  $result=mysqli_query($con,$sql);
 				  if(mysqli_num_rows($result)>0){
@@ -54,7 +54,7 @@ include 'header.php';
                 </tr>
                 <?php } } else{ ?>
                 <tr>
-                    <td colspan="7">No record found</td>
+                    <td colspan="8">No record found</td>
                 </tr>   
                 <?php } ?>
             </tbody>

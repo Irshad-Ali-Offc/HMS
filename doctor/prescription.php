@@ -131,10 +131,20 @@ $row=mysqli_fetch_array($result);
             <pre><?php echo $row['notes'];?></pre><br><br>
             </div>
             <div class="presc-two">
-            <p><strong>Prescription</strong></p>
-            <pre><?php echo $row['prescription'];?></pre><br><br>
-            <br>
-            <p><strong>Next Visit Date</strong></p>
+            <p><h4>Prescription</h4></p>
+            <!-- <pre><?php echo $row['prescription'];?></pre><br><br> -->
+               <br>
+                  <?php
+                  $sql="select * from prescription where appointment_id='$id'";
+                  $result=mysqli_query($con,$sql);
+                  $row=mysqli_fetch_array($result);
+                  ?>
+                  <pre><?php echo htmlspecialchars($row['prescription']); ?></pre>
+               
+             
+                  <br>
+                  <hr> 
+            <p style="margin-top: 2rem;"><strong>Next Visit Date</strong></p>
             <p><?php echo date('d M Y',strtotime($row['date']));?></p>
             </div>
             </div>

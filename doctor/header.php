@@ -34,8 +34,8 @@ $doctor = mysqli_fetch_array($result);
       <nav>
          <ul>
             <li>
-               <img src="../image/logo.png" alt="Hospital Logo" class="nav-logo">
-                  <a class="hospital-name" href="home.php">Medicare</a>
+               
+                  <a class="hospital-name" href="home.php"> <img src="../image/logo.png" alt="Hospital Logo" class="nav-logo"> Medicare</a>
                
             </li>
             <li><a href="home.php">Dashboard</a></li>
@@ -45,8 +45,17 @@ $doctor = mysqli_fetch_array($result);
             <li><a href="profile.php">Profile</a></li>
             <li><a href="logout.php">Logout</a></li>
             <li>
-
-               <img src="../image/userlogo.png" alt="User Icon" class="user-icon">
+   <?php 
+   $sql="select * from doctor where user_id='".$doctor['id']."'";
+   $result=mysqli_query($con,$sql);
+   $row=mysqli_fetch_array($result);
+   if($row['image']!=''){
+      echo '<a href="profile.php"><img src="../image/'.$row['image'].'" alt="User Icon" class="user-icon"></a>';
+   } else {
+      echo '<a href="profile.php"><img src="../image/userlogo.png" alt="User Icon" class="user-icon"></a>';
+   }
+   ?>
+              
             </li>
          </ul>
       </nav>

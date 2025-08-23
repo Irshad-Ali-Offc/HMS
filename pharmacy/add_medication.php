@@ -127,23 +127,27 @@
  include 'navbar.php';
  ?>
     <main class="main-content">
-        <form class="add-medication-form">
+        <form method="post" class="add-medication-form">
             <div class="form-row">
                 <div class="form-col">
                     <div class="form-group">
                         <label for="medication-name">Medication Name*</label>
-                        <input type="text" id="medication-name" required>
+                        <input type="text" name="name" id="medication-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="medication-name">Price*</label>
+                        <input type="number" name="price" id="medication-name" required>
                     </div>
                     
                     <div class="form-col">
                         <div class="form-group">
                             <label for="dosage">Dosage*</label>
-                            <input type="text" id="dosage" placeholder="e.g. 500mg" required>
+                            <input type="text" name="dosage" id="dosage" placeholder="e.g. 500mg" required>
                         </div>
                     
                     <div class="form-group">
                         <label for="category">Category*</label>
-                        <select id="category" required>
+                        <select name="category" id="category" required>
                             <option value="">Select a category</option>
                             <option value="antibiotic">Antibiotic</option>
                             <option value="antihypertensive">Antihypertensive</option>
@@ -158,7 +162,7 @@
                     
                     <div class="form-group">
                         <label for="form">Form*</label>
-                        <select id="form" required>
+                        <select name="form" id="form" required>
                             <option value="">Select form</option>
                             <option value="tablet">Tablet</option>
                             <option value="capsule">Capsule</option>
@@ -171,7 +175,7 @@
                     
                     <div class="form-group">
                         <label for="quantity">Initial Quantity*</label>
-                        <input type="number" id="quantity" min="0" required>
+                        <input type="number" name="quantity" id="quantity" min="0" required>
                     </div>
                 </div>
             </div>
@@ -180,43 +184,70 @@
                 <div class="form-col">
                     <div class="form-group">
                         <label for="supplier">Supplier</label>
-                        <input type="text" id="supplier">
+                        <input type="text" name="supplier" id="supplier">
                     </div>
                     
                     <div class="form-group">
                         <label for="lot-number">Lot Number</label>
-                        <input type="text" id="lot-number">
+                        <input type="text" name="lot_number" id="lot-number">
                     </div>
                 </div>
                 
                 <div class="form-col">
                     <div class="form-group">
                         <label for="expiry-date">Expiry Date*</label>
-                        <input type="date" id="expiry-date" required>
+                        <input type="date" name="expiry_date" id="expiry-date" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="threshold">Low Stock Threshold</label>
-                        <input type="number" id="threshold" min="0" placeholder="Default: 10">
+                        <input type="number" name="threshold" id="threshold" min="0" placeholder="Default: 10">
                     </div>
                 </div>
             </div>
             
             <div class="form-group">
                 <label for="instructions">Storage Instructions</label>
-                <textarea id="instructions" placeholder="e.g. Store in a cool, dry place"></textarea>
+                <textarea name="instructions" id="instructions" placeholder="e.g. Store in a cool, dry place"></textarea>
             </div>
             
             <div class="form-group">
                 <label for="notes">Additional Notes</label>
-                <textarea id="notes"></textarea>
+                <textarea name="notes" id="notes"></textarea>
             </div>
             
             <div class="form-actions">
                 <button type="button" class="btn btn-secondary">Cancel</button>
-                <button type="submit" class="btn btn-primary">Add Medication</button>
+                <button type="submit" name="submit" class="btn btn-primary">Add Medication</button>
             </div>
         </form>
     </main>
 </body>
 </html>
+<?php
+if(isset($_POST['submit']))
+{
+    $name=$_POST['name'];
+    $price=$_POST['price'];
+    $dosage=$_POST['dosage'];
+    $category=$_POST['category'];
+    $form=$_POST['form'];
+    $quantity=$_POST['quantity'];
+    $supplier=$_POST['supplier'];
+    $lot_number=$_POST['lot_number'];
+    $expiry_date=$_POST['expiry_date'];
+    $threshold=$_POST['threshold'];
+    $instructions=$_POST['instructions'];
+    $notes=$_POST['notes'];
+    $sql="insert into medication values('','$name','$price','$dosage','$category','$form','$quantity','$supplier','$lot_number','$expiry_date','$threshold','$instructions','$notes')";
+    $result=mysqli_query($con,$sql);
+    if($result)
+    {
+        echo '<script>window.location.href="inventory.php"
+        alert("Medication added successfully")</script>';
+    }
+    else{
+        echo '<script>alert("Sorry try again later")</script>';
+    }
+}
+?>

@@ -87,31 +87,37 @@
           </tr>
         </thead>
         <tbody>
+            <?php
+            $i=1;
+            $sql="SELECT 
+            p.id AS prescription_id,
+            u_patient.name AS patient_name,
+            u_doctor.name AS doctor_name,
+            p.date AS prescription_date, 
+            appointment_id
+            FROM 
+                prescription p
+            JOIN 
+                patient pt ON p.patient_id = pt.id
+            JOIN 
+                users u_patient ON pt.user_id = u_patient.id
+            JOIN 
+                doctor d ON p.doctor_id = d.id
+            JOIN 
+                users u_doctor ON d.user_id = u_doctor.id";
+            $result=mysqli_query($con,$sql);
+            while($row=mysqli_fetch_array($result)){
+            ?>
           <tr>
-            <td>1</td>
-            <td>Ali Khan</td>
-            <td>Dr. Ahmad</td>
-            <td>08-May-2025</td>
+            <td><?php echo $i++;?></td>
+            <td><?php echo $row['patient_name'];?></td>
+            <td><?php echo $row['doctor_name'];?></td>
+            <td><?php echo date('d M Y',strtotime($row['prescription_date']));?></td>
             <td>
-              <a href="view_prescription.php" class="btn">View</a>
-              <a href="" class="btn" target="_blank">Print</a>
-                 <a class="btn" >cancel</>
-              <a class="btn" >complete</a>
+              <a href="view_prescription.php?id=<?php echo $row['appointment_id'];?>" class="btn">View</a>
             </td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Sara Malik</td>
-            <td>Dr. Ayesha</td>
-            <td>07-May-2025</td>
-            <td>
-              <a href="view_prescription.php" class="btn">View</a>
-              <a  class="btn" >Print</a>
-              <a  class="btn" >cancel</a>
-              <a  class="btn" >complete</a>
-              
-            </td>
-          </tr>
+    <?php } ?>
         </tbody>
       </table>
     </div>

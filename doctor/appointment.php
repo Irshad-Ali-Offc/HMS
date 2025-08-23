@@ -30,10 +30,10 @@ include 'header.php';
 				  $i=1;
 				  if(isset($_POST['search'])){
 					  $keyword=$_POST['keyword'];
-					  $sql="select appointment.*, users.name as doctor_name, address from appointment INNER JOIN users on users.id=appointment.doctor_id INNER JOIN patient on appointment.patient_id=patient.user_id where doctor_id='".$doctor['id']."' AND (users.name  LIKE '%$keyword%' OR patient_name LIKE '%$keyword%' OR fee LIKE '%$keyword%' OR status LIKE '%$keyword%' OR pay_status LIKE '%$keyword%')";
+					  $sql="select appointment.*, users.name as doctor_name, address from appointment INNER JOIN users on users.id=appointment.doctor_id INNER JOIN patient on appointment.patient_id=patient.user_id where doctor_id='".$doctor['id']."' AND (users.name  LIKE '%$keyword%' OR patient_name LIKE '%$keyword%' OR fee LIKE '%$keyword%' OR status LIKE '%$keyword%' OR pay_status LIKE '%$keyword%') ORDER BY appointment.id DESC";
 				  }
 				  else{
-				  $sql="select appointment.*, users.name as doctor_name, address from appointment INNER JOIN users on users.id=appointment.doctor_id INNER JOIN patient on appointment.patient_id=patient.user_id where doctor_id='".$doctor['id']."' ORDER BY appointment.date ASC";
+				  $sql="select appointment.*, users.name as doctor_name, address from appointment INNER JOIN users on users.id=appointment.doctor_id INNER JOIN patient on appointment.patient_id=patient.user_id where doctor_id='".$doctor['id']."' ORDER BY appointment.date desc";
 				  }
 				  $result=mysqli_query($con,$sql);
 				  if(mysqli_num_rows($result)>0){

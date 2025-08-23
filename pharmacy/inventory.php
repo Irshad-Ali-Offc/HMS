@@ -110,7 +110,7 @@
 <main class="main-content">
         <div class="controls">
             <div class="search-box">
-                <input type="text" placeholder="Search medications...">
+                <input type="search" id="searchInput" placeholder="Search medications...">
             </div>
             <a href="add_medication.php">
             <button class="add-btn">+ Add New Medication</button>
@@ -124,6 +124,7 @@
                     <th>Medication Name</th>
                     <th>Category</th>
                     <th>Dosage</th>
+                    <th>Price</th>
                     <th>Quantity</th>
                     <th>Expiry Date</th>
                     <th>Supplier</th>
@@ -132,79 +133,51 @@
                 </tr>
             </thead>
             <tbody>
+                <?php
+                $i=1;
+                $sql="select * from medication";
+                $result=mysqli_query($con,$sql);
+                while($row=mysqli_fetch_array($result)){
+                ?>
                 <tr>
-                    <td>M001</td>
-                    <td>Amoxicillin</td>
-                    <td>Antibiotic</td>
-                    <td>500mg</td>
-                    <td>120</td>
-                    <td>2024-06-15</td>
-                    <td>PharmaCorp</td>
-                    <td><span class="status status-in-stock">In Stock</span></td>
+                    <td>M00<?php echo $i++;?></td>
+                    <td><?php echo $row['name'];?></td>
+                    <td><?php echo $row['category'];?></td>
+                    <td><?php echo $row['dosage'];?></td>
+                    <td>Rs. <?php echo $row['price'];?></td>
+                    <td><?php echo $row['quantity'];?></td>
+                    <td><?php echo $row['expiry_date'];?></td>
+                    <td><?php echo $row['supplier'];?></td>
                     <td>
-                       <a href="edit_inventory.php">
+                        <?php
+                        if($row['quantity']>$row['threshold']){ ?>
+                        <span class="status status-in-stock">In Stock</span>
+                        <?php } else if($row['quantity']<$row['threshold']){ ?>
+                        <span class="status status-low-stock">Low Stock</span>
+                        <?php } else{ ?>
+                        <span class="status status-out-of-stock">Out of Stock</span>
+                        <?php } ?>
+                        </td>
+                    <td>
+                       <a href="edit_inventory.php?id=<?php echo $row['id'];?>">
                          <button class="action-btn edit-btn">Edit</button>
                        </a>
-                        <button class="action-btn delete-btn">Delete</button>
+                        <a href="delete_inventory.php?id=<?php echo $row['id'];?>">
+                        <button class="action-btn delete-btn mt-2">Delete</button>
+                        </a>
                     </td>
                 </tr>
-                <tr>
-                    <td>M002</td>
-                    <td>Lisinopril</td>
-                    <td>Blood Pressure</td>
-                    <td>10mg</td>
-                    <td>45</td>
-                    <td>2025-01-20</td>
-                    <td>MediSupply</td>
-                    <td><span class="status status-low-stock">Low Stock</span></td>
-                    <td>
-                        <button class="action-btn edit-btn">Edit</button>
-                        <button class="action-btn delete-btn">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>M003</td>
-                    <td>Atorvastatin</td>
-                    <td>Cholesterol</td>
-                    <td>20mg</td>
-                    <td>0</td>
-                    <td>2024-09-30</td>
-                    <td>HealthPlus</td>
-                    <td><span class="status status-out-of-stock">Out of Stock</span></td>
-                    <td>
-                        <button class="action-btn edit-btn">Edit</button>
-                        <button class="action-btn delete-btn">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>M004</td>
-                    <td>Metformin</td>
-                    <td>Diabetes</td>
-                    <td>850mg</td>
-                    <td>85</td>
-                    <td>2025-03-12</td>
-                    <td>PharmaCorp</td>
-                    <td><span class="status status-in-stock">In Stock</span></td>
-                    <td>
-                        <button class="action-btn edit-btn">Edit</button>
-                        <button class="action-btn delete-btn">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>M005</td>
-                    <td>Ibuprofen</td>
-                    <td>Pain Relief</td>
-                    <td>200mg</td>
-                    <td>210</td>
-                    <td>2026-05-18</td>
-                    <td>MediSupply</td>
-                    <td><span class="status status-in-stock">In Stock</span></td>
-                    <td>
-                        <button class="action-btn edit-btn">Edit</button>
-                        <button class="action-btn delete-btn">Delete</button>
-                    </td>
-                </tr>
+                <?php } ?>
             </tbody>
         </table>
     </main>
-    
+    <script>
+  document.getElementById('searchInput').addEventListener('keyup', function() {
+    let filter = this.value.toLowerCase();
+    let rows = document.querySelectorAll('.inventory-table tbody tr');
+    rows.forEach(row => {
+      let text = row.textContent.toLowerCase();
+      row.style.display = text.includes(filter) ? '' : 'none';
+    });
+  });
+</script>

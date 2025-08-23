@@ -10,7 +10,7 @@ include 'header.php';
                       <select name="patient" required>
                             <option value="" disabled="" selected="">Select a patient</option>
                             <?php
-							$sql="select * from appointment where doctor_id='".$doctor['id']."' AND status='Accept' ORDER BY date DESC";
+							$sql="select * from appointment where doctor_id='".$doctor['id']."' AND status='Accept' AND date_format(date,'%Y-%m-%d')=CURDATE() ORDER BY date DESC";
 							$result=mysqli_query($con,$sql);
 							while($row=mysqli_fetch_array($result)){
 							?>

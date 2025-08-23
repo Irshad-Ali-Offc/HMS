@@ -79,40 +79,116 @@
   <div class="form-container">
     <form action="" method="POST">
       
-      <label for="cnic">CNIC:</label>
-       <input type="text" id="cnic" name="cnic" placeholder="e.g. 45105-2121213-6" 
-       pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}" 
-       title="CNIC must be in the format 45105-2121213-6" 
-       required>
-      <label for="name">Patient Name:</label>
-       <input type="text" id="fullname" name="name" placeholder="Enter full name" 
-       pattern="[A-Za-z ]+" 
-       title="Only letters and spaces are allowed" 
-       required>
-      
        <label>Department</label>
                   <select name="department" id="department" required>
                     <option value="" disabled selected>Select a department</option>
-                    <option value="1">Cardiology</option>
-                    <option value="2">Neurology</option>
+                      <?php
+                      $sql="select * from department";
+                      $result=mysqli_query($con,$sql);
+                      while($row=mysqli_fetch_array($result)){
+                      ?>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['dep_name'];?></option>
+                      <?php } ?>
                   </select>
                    <label>Doctor</label>
                   <select name="doctor" id="doctor" required>
                     <option value="" disabled selected>Select a doctor</option>
-                    <option value="1">Dr. Ahmed</option>
-                    <option value="2">Dr. Sana</option>
                   </select>
+        <label>Patient</label>
+                  <select name="patient" id="patient" required>
+                    <option value="" disabled selected>Select a patient</option>
+                      <?php
+                      $sql="select users.name, patient.id from patient INNER JOIN users on users.id=patient.user_id";
+                      $result=mysqli_query($con,$sql);
+                      while($row=mysqli_fetch_array($result)){
+                      ?>
+                    <option value="<?php echo $row['id'];?>"><?php echo $row['name'];?></option>
+                      <?php } ?>
+                  </select>
+            <input type="text" name="name" id="name" value="" hidden placeholder="Patient Name">
             <label for="date">Appointment Date:</label>
             <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" required>
       
             <label for="time">Appointment Time:</label>
             <input type="time" id="time" name="time" min="09:00" max="18:00" required>
             <label for="fee">Consultation Fee:</label>
-        <input type="text" name="fee" value="1000" readonly placeholder="Consultation Fee">
+        <input type="text" name="fee" id="fee" value="" readonly placeholder="Consultation Fee">
 
-      <button type="submit">Pay Now</button>
+      <button type="submit" name="submit">Send Now</button>
     </form>
   </div>
   </main>
 </body>
 </html>
+<?php
+if(isset($_POST['submit'])){
+    $doctor=$_POST['doctor']; 
+    $patient=$_POST['patient']; 
+    $name=$_POST['name']; 
+    $date=$_POST['date']; 
+    $time=$_POST['time']; 
+    $fee=$_POST['fee']; 
+    $added=date('Y-m-d');
+    $sql="insert into appointment values('','$doctor','$patient','$name','$added','$date','$time','$fee','','Complete','Pending')";
+	$result=mysqli_query($con,$sql);
+	if($result){
+		echo '<script>window.location.href="appointment.php"
+				alert("Appointment sent successfully")</script>';
+	}
+	else{
+		echo '<script>alert("Sorry try again later")</script>';	
+	}
+}
+?>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#department').on('change', function(){
+        var department = $(this).val();
+        if(department){
+            $.ajax({
+                type:'POST',
+                url:'ajaxData.php',
+                data:'department='+department,
+                success:function(html){
+                    $('#doctor').html(html);
+                }
+            });
+        }else{
+            $('#doctor').html('<option value="" disabled selected>Select a doctor</option>');
+        }
+    });
+    $('#doctor').on('change', function(){
+    var doctor = $(this).val();
+    if(doctor){
+        $.ajax({
+            type:'POST',
+            url:'ajaxData.php',
+            data:{doctor: doctor},
+            success:function(fee){
+                $('#fee').val(fee); // ← set input value
+            }
+        });
+    }else{
+        $('#fee').val(''); // ← clear fee if no doctor selected
+    }
+});
+$('#patient').on('change', function(){
+    var patient = $(this).val();
+    if(patient){
+        $.ajax({
+            type:'POST',
+            url:'ajaxData.php',
+            data:{patient: patient},
+            success:function(name){
+                $('#name').val(name); // ← set input value
+            }
+        });
+    }else{
+        $('#name').val(''); // ← clear fee if no doctor selected
+    }
+});
+    
+});
+</script>

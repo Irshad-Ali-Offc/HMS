@@ -72,47 +72,66 @@ if(isset($_POST['submit'])){
 		echo '<script>alert("Please select another time this is already scheduled")</script>';
 	}
 	else{
-		$sql="insert into appointment values('','$id','".$patient['id']."','".$patient['name']."','$added_on','$date','$time','$fee','','Pending','Pending')";
-		$result=mysqli_query($con,$sql);
-		$appointment_id=mysqli_insert_id($con);
-		$_SESSION['appointment_id']=$appointment_id;
-		$fee=$fee*100;
-		echo '<script>
-				var options = {
-					"key": "rzp_test_BYcnQFZqGde6nm",
-					"amount": "'.$fee.'",
-					"currency": "PKR",
-					"name": "Hospital Management System",
-					"description": "Debit/ Credit Payment",
-					"image": "../image/1stlogo.png",
-					"callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
-					"prefill": {
-						"name": "'.$patient['name'].'",
-						"email": "hms@gmail.com",
-						"contact": "9999999999"
-					},
-					"notes": {
-						"address": ""
-					},
-					"theme": {
-						"color": "#3399cc"
-					},
-					"handler": function (response){
-						jQuery.ajax({ 
-							type: "post",
-							url: "payment_process.php",
-							data: "payment_id="+response.razorpay_payment_id,
-							success:function(result){
-								alert("Appointment sent successfully")
-								window.location.href="appointment.php"
-							}
-						});
-					}
-				};
-				var rzp1 = new Razorpay(options);
-				rzp1.open();
-				
-				</script>';
+        
+        $amount=$_POST['fee']*100;
+        // JazzCash sandbox credentials
+        $pp_MerchantID = "MC151306"; // your Merchant ID
+        $pp_Password = "zux9c39515"; // your Password
+        $pp_IntegritySalt = "0w088w0u3f"; // your Integrity Salt
+        $pp_TxnRefNo = 'T' . date('YmdHis'); // unique transaction ID
+        $pp_Amount = $amount; // Amount in paisa 
+        $pp_TxnDateTime = date('YmdHis');
+        $pp_ExpiryDateTime = date('YmdHis', strtotime('+1 hour'));
+        $pp_ReturnURL = "http://localhost/hms/patient/booking_complete.php"; // Change it accordingly
+
+        $data = array(
+            "pp_Version" => "1.1",
+            "pp_TxnType" => "MWALLET",
+            "pp_Language" => "EN",
+            "pp_MerchantID" => $pp_MerchantID,
+            "pp_Password" => $pp_Password,
+            "pp_TxnRefNo" => $pp_TxnRefNo,
+            "pp_Amount" => $pp_Amount,
+            "pp_TxnCurrency" => "PKR",
+            "pp_TxnDateTime" => $pp_TxnDateTime,
+            "pp_BillReference" => "billRef",
+            "pp_Description" => "JazzCash Test Transaction",
+            "pp_TxnExpiryDateTime" => $pp_ExpiryDateTime,
+            "pp_ReturnURL" => $pp_ReturnURL,
+            "pp_SecureHash" => "", // to be calculated
+            "ppmpf_1" => "NA",
+            "ppmpf_2" => "NA",
+            "ppmpf_3" => "NA",
+            "ppmpf_4" => "NA",
+            "ppmpf_5" => "NA"
+        );
+
+        // Create a secure hash
+        $sortedKeys = array_keys($data);
+        sort($sortedKeys);
+        $hashString = '';
+        foreach ($sortedKeys as $key) {
+            $hashString .= '&' . $data[$key];
+        }
+        $hashString = $pp_IntegritySalt . $hashString;
+        $data["pp_SecureHash"] = hash_hmac('sha256', $hashString, $pp_IntegritySalt);
+
+        // Send form to JazzCash payment gateway
+        echo '<form id="myForm" method="post" action="https://sandbox.jazzcash.com.pk/CustomerPortal/transactionmanagement/merchantform" name="paymentForm">';
+        foreach ($data as $key => $value) {
+            echo '<input type="hidden" name="' . $key . '" value="' . $value . '">';
+        }
+        echo '</form>';
+
+        $sql="insert into appointment values('','$id','".$patient['id']."','".$patient['name']."','$added_on','$date','$time','$fee','','Pending','Pending')";
+        $result=mysqli_query($con,$sql);
+        if($result){
+            echo '<script>document.getElementById("myForm").submit();</script>';	
+        }
+        else{
+            echo "<script>alert('Sorry, try again later')</script>";
+        }
+        
 	}
 }
 ?>
