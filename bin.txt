@@ -1,1 +1,25 @@
 03123456789
+
+# Stage all modified files
+git add .
+
+# Commit changes with a message
+git commit -m "Updated PHP files and bug fixes"
+
+# Push to your repo
+git push origin main
+
+# Go to project folder
+cd hms   # or whatever folder name they used
+
+# Fetch latest changes
+git fetch origin
+
+# Pull the updates into their local branch
+git pull origin main
+
+# Clone the repo
+git clone https://github.com/Irshad-Ali-Offc/HMS.git
+
+# Go inside the project
+cd HMS
