@@ -4,7 +4,7 @@ include 'header.php';
 
         
         <main class="main-content">
-             
+             <div class="dashboard-section">
             <section id="profile-section">
             <?php
 			$sql="select patient.*, users.name from patient INNER JOIN users ON users.id=patient.user_id where user_id='".$patient['id']."'";
@@ -59,6 +59,7 @@ include 'header.php';
             </section>
             
         </main>
+        </div>
     </div>
 
 

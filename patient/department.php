@@ -4,7 +4,7 @@ include 'header.php';
 
        
         <main class="main-content">
-             
+             <div class="dashboard-section">
             <section id="doctor-section">
                 <h2>View Departments</h2>
                 <?php
@@ -15,7 +15,7 @@ include 'header.php';
                 <a href="doctor.php?department=<?php echo $row['id'];?>" class="text-decoration text-dark">
                 <div class="department-card">
                 	<div class="department-card-body">
-                    <img src="../image/<?php echo $row['image'];?>" class="card-img">
+                    <img src="../image/<?php echo $row['image'];?>" class="card-img"      style="width:100px; height:100px; object-fit:cover; margin:auto; display:block; border-radius:50%;">
                     <div class="card-text">
                    		<h4><?php echo $row['dep_name'];?></h4>
                     </div>
@@ -28,7 +28,7 @@ include 'header.php';
             
         </main>
     </div>
-
+</div>
 
 </body>
 

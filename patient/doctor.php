@@ -40,7 +40,7 @@ include 'header.php';
 
        
         <main class="main-content">
-             
+             <div class="dashboard-section">
             <section id="doctor-section">
                 <h2>View Doctors</h2>
                 <form method="post">
@@ -85,6 +85,7 @@ include 'header.php';
             </section>
             
         </main>
+		</div>
     </div>
 
 

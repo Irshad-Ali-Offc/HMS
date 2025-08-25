@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2025 at 07:42 AM
+-- Generation Time: Aug 23, 2025 at 01:16 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -81,19 +81,27 @@ INSERT INTO `appointment` (`id`, `doctor_id`, `patient_id`, `patient_name`, `add
 (15, 11, 12, 'Usama Tariq', '2025-02-27', '2025-02-27', '00:42:00', 2000, 'pay_Q0mroJsi2Ncluk', 'Complete', 'Accept'),
 (16, 2, 3, 'Muhammad Zeeshan ali khanhj', '2025-04-25', '2025-05-03', '17:32:00', 2000, 'pay_QNH2PGrtZSr2DH', 'Complete', 'Accept'),
 (17, 2, 3, 'Muhammad Zeeshan ali khanhj', '2025-04-26', '2025-05-03', '17:39:00', 2000, 'pay_QNiyNEG9KZModb', 'Complete', 'Accept'),
-(18, 2, 3, 'Muhammad Zeeshan ali khanhj', '2025-04-27', '2025-05-03', '10:04:00', 0, '', 'Complete', 'Reject'),
+(18, 2, 3, 'Muhammad Zeeshan ali khanhj', '2025-04-27', '2025-08-23', '10:04:00', 0, '', 'Complete', 'Accept'),
 (19, 7, 3, 'Muhammad Zeeshan ali khanhj', '2025-04-27', '2025-05-03', '11:05:00', 0, '', 'Complete', 'Pending'),
 (20, 10, 3, 'Muhammad Zeeshan ali khan', '2025-04-29', '2025-05-03', '03:36:00', 2500, '', 'Pending', 'Pending'),
 (21, 6, 3, 'Muhammad Zeeshan ali khan', '2025-05-03', '2025-06-27', '02:12:00', 2500, 'pay_QQJoH2lfM88ncT', 'Complete', 'Accept'),
 (22, 6, 15, 'ali', '2025-05-03', '2025-05-03', '11:12:00', 2500, 'pay_QQJuU6uN21tUU9', 'Complete', 'Accept'),
-(23, 2, 3, 'Muhammad Zeeshan ali khan', '2025-05-03', '2025-05-04', '13:15:00', 2000, '', 'Pending', 'Pending'),
+(23, 2, 3, 'Muhammad Zeeshan ali khan', '2025-05-03', '2025-08-23', '13:15:00', 2000, '', 'Pending', 'Accept'),
 (24, 6, 2, 'Sidra Batool', '2025-06-23', '2025-06-25', '10:00:00', 2500, '', 'Complete', 'Pending'),
 (25, 11, 3, 'Muhammad Zeeshan ali khan', '2025-07-19', '2025-07-23', '14:00:00', 2000, '', 'Pending', 'Pending'),
 (26, 10, 3, 'Muhammad Zeeshan ali khan', '2025-07-19', '2025-07-31', '10:00:00', 2500, '', 'Pending', 'Pending'),
 (27, 9, 3, 'Muhammad Zeeshan ali khan', '2025-07-19', '2025-07-31', '08:00:00', 2000, 'T20250719211808', 'Complete', 'Pending'),
 (28, 11, 3, 'Muhammad Zeeshan ali khan', '2025-07-19', '2025-08-09', '18:00:00', 2000, 'T20250719212129', 'Complete', 'Pending'),
-(29, 6, 7, 'Sidra Batool', '2025-07-19', '2025-07-20', '11:00:00', 2500, 'T20250719214223', 'Complete', 'Pending'),
-(30, 2, 7, 'Sidra Batool', '2025-07-19', '2025-07-28', '13:00:00', 2000, 'T20250719215108', 'Complete', 'Pending');
+(29, 6, 7, 'Sidra Batool', '2025-07-19', '2025-08-23', '11:00:00', 2500, 'T20250719214223', 'Complete', 'Accept'),
+(30, 2, 7, 'Sidra Batool', '2025-08-22', '2025-08-23', '13:00:00', 2000, 'T20250719215108', 'Complete', 'Accept'),
+(31, 6, 23, 'Amina ', '2025-08-22', '2025-08-23', '10:51:00', 2500, '', 'complete', 'Accept'),
+(32, 2, 7, 'Sidra Batool', '2025-08-22', '2025-08-23', '02:57:00', 0, '', 'Complete', 'Accept'),
+(33, 1, 7, 'Sidra Batool', '2025-08-22', '2025-08-26', '02:09:00', 0, '', 'Complete', 'Pending'),
+(34, 7, 1, 'Zeeshan ali', '2025-08-22', '2025-08-22', '16:36:00', 2000, '', 'Complete', 'Pending'),
+(35, 6, 3, 'Zeeshan ali', '2025-08-22', '2025-08-26', '13:48:00', 2500, 'T20250822224445', 'Complete', 'Accept'),
+(36, 7, 2, 'Sidra Batool', '2025-08-22', '2025-08-26', '14:51:00', 2000, '', 'Complete', 'Pending'),
+(37, 7, 3, 'Usama Tariq', '2025-08-22', '2025-08-26', '16:58:00', 2000, '', 'Complete', 'Pending'),
+(38, 1, 7, 'Sidra Batool', '2025-08-23', '2025-08-23', '17:30:00', 0, '', 'Complete', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -194,7 +202,7 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`id`, `user_id`, `dep_id`, `specialization`, `qualification`, `experience`, `designation`, `fee`, `gender`, `contact`, `address`, `image`, `about`) VALUES
-(1, 2, 1, 'Dermatologist, Cosmetologist', 'M.B.B.S, M.C.P.S (Derma)', '8 Years', 'Senior Consultant', 2000, 'Female', '03049834989', 'House No #14 Street 4 Area Ali Town Lahore', 'female doctor.png', '<h3><strong>About Dr. Munazza Zahoor</strong></h3><p>Dr. Munazza Zahoor is a Dermatologist with 8 years of experience currently available at Online Video Consultation, Multan. You can book an in-person appointment or an online video consultation with Dr. Munazza Zahoor through oladoc.com or by calling at 0618048444.</p><p>&nbsp;</p><h4><strong>Experience</strong></h4><p>Dr. Munazza Zahoor has over 8 years of experience in her field.</p><p>&nbsp;</p><h4><strong>Qualifications</strong></h4><p>Dr. Munazza Zahoor has the following qualifications:</p><p>M.B.B.S</p><p>M.C.P.S (Derma)</p><p>&nbsp;</p><h4><strong>Services Offered</strong></h4><p>Following are some of the services offered by Dr. Munazza Zahoor:</p><ul><li>Acne Treatment</li><li>Alopecia</li><li>Antihistamine Treatment</li><li>Boil</li><li>Chemical Peel</li><li>&nbsp;</li></ul><h4><strong>Conditions Treated</strong></h4><p>Following are some of the conditions treated by Dr. Munazza Zahoor:</p><ul><li>Abscess</li><li>Acne</li><li>Acne Scars</li><li>Atopic Dermatitis (Eczema)</li><li>Eczema</li></ul>'),
+(1, 2, 1, 'Dermatologist, Cosmetologist', 'M.B.B.S, M.C.P.S (Derma)', '8 Years', 'Senior Consultant', 2000, 'Female', '03049834989', 'House No #14 Street 4 Area Ali Town Lahore', 'female-doctor-icon-stethoscope-women-260nw-2499389821.jpg', '<h3><strong>About Dr. Munazza Zahoor</strong></h3><p>Dr. Munazza Zahoor is a Dermatologist with 8 years of experience currently available at Online Video Consultation, Multan. You can book an in-person appointment or an online video consultation with Dr. Munazza Zahoor through oladoc.com or by calling at 0618048444.</p><p>&nbsp;</p><h4><strong>Experience</strong></h4><p>Dr. Munazza Zahoor has over 8 years of experience in her field.</p><p>&nbsp;</p><h4><strong>Qualifications</strong></h4><p>Dr. Munazza Zahoor has the following qualifications:</p><p>M.B.B.S</p><p>M.C.P.S (Derma)</p><p>&nbsp;</p><h4><strong>Services Offered</strong></h4><p>Following are some of the services offered by Dr. Munazza Zahoor:</p><ul><li>Acne Treatment</li><li>Alopecia</li><li>Antihistamine Treatment</li><li>Boil</li><li>Chemical Peel</li><li>&nbsp;</li></ul><h4><strong>Conditions Treated</strong></h4><p>Following are some of the conditions treated by Dr. Munazza Zahoor:</p><ul><li>Abscess</li><li>Acne</li><li>Acne Scars</li><li>Atopic Dermatitis (Eczema)</li><li>Eczema</li></ul>'),
 (2, 6, 2, 'Dentist, Obstetrician', 'MBBS, MCPS, MRCOG (UK), FRCOG (UK)', '20 Years', 'Senior Consultant', 2500, 'Female', '03049834989', 'Suite No. 3 Cantt Board Plaza Adjacent To The Mall Of Lahore Tufail Road, Lahore', 'expressive-young-woman-posing-studio.jpg', '<h3><strong>Experience</strong></h3><p>Dr. Sadia Sarwar has over 23 years of experience in her field.</p><p>&nbsp;</p><h3><strong>Professional memberships</strong></h3><ul><li>Pakistan Medical Comission (PMC)</li><li>&nbsp;</li></ul><h3><strong>About Dr. Sadia Sarwar</strong></h3><p>Dr. Sadia Sarwar is an Dentist practicing in Lahore. She graduated from King Edward Medical University in 1995. Later she earned her postgraduate degrees i.e MCPS and MRCOG (England). Dr. Sadia has work experience both in Pakistan and abroad. She is currently working as Assistant Professor in CMC Lahore. You can book an appointment through Oladoc!</p>'),
 (4, 8, 3, 'Cosmetic Dentistry, Joint Replacement', 'MBBS, FCPS, MCPS, MD, MS', '8 years', 'Consultant', 2000, 'Male', '+923001234567', '123 Main Boulevard, Lahore, Punjab, Pakistan', 'PIC.jpg', '<p>Dr.Mehtab is a renowned orthopedic surgeon with over 8 years of experience in joint replacement surgeries. He has worked at leading hospitals in Lahore.</p>'),
 (5, 9, 3, 'Joint Replacement Specialist', 'MBBS, FCPS (Ortho)', '10 years', 'Senior Consultant', 2000, 'Female', '03219876543', '456 Ortho Care, DHA Phase 5, Karachi', 'beautiful-young-female-doctor-looking-camera-office.jpg', '<p>Ayesha Khan is a highly skilled orthopedic surgeon specializing in joint replacement surgeries. With over 10 years of experience, she has successfully performed numerous complex procedures</p>'),
@@ -228,8 +236,18 @@ CREATE TABLE `medication` (
 --
 
 INSERT INTO `medication` (`id`, `name`, `price`, `dosage`, `category`, `form`, `quantity`, `supplier`, `lot_number`, `expiry_date`, `threshold`, `instructions`, `notes`) VALUES
-(1, 'Paracetamol 500mg', 80, '500mg (Take 1 tablet every 6 hours if needed for pain or fever)', 'antibiotic', 'tablet', 93, 'MedPak Pharmaceuticals', 'PARA-B23103', '2026-06-18', '15', 'Store below 25C, protect from light and moisture', 'Do not exceed 4g per day; suitable for adults and children over 12 years'),
-(2, 'Amoxicillin 250mg/5ml Suspension', 120, '5ml every 8 hours for 5-7 days (or as directed)', 'antibiotic', 'other', 54, 'HealWell Pharma', 'AMOX-S20254', '2025-10-04', '20', 'Store in refrigerator after reconstitution; discard after 7 days\r\n\r\n', 'Shake well before use; not for patients with penicillin allergy');
+(1, 'Paracetamol 500mg', 80, '500mg (Take 1 tablet every 6 hours if needed for pain or fever)', 'antibiotic', 'tablet', 70, 'MedPak Pharmaceuticals', 'PARA-B23103', '2026-06-18', '15', 'Store below 25C, protect from light and moisture', 'Do not exceed 4g per day; suitable for adults and children over 12 years'),
+(2, 'Amoxicillin 250mg/5ml Suspension', 120, '5ml every 8 hours for 5-7 days (or as directed)', 'antibiotic', 'other', 30, 'HealWell Pharma', 'AMOX-S20254', '2025-10-04', '20', 'Store in refrigerator after reconstitution; discard after 7 days\r\n\r\n', 'Shake well before use; not for patients with penicillin allergy'),
+(3, 'Paracetamol 500mg', 80, '500mg (Take 1 tablet every 6 hours if needed for pain/fever)', 'antibiotic', 'tablet', 80, 'MedPak Pharmaceuticals', 'PARA-B23103', '2028-08-18', '15', 'Store below 25C, protect from light and moisture', 'Do not exceed 4g per day; suitable for adults and children above 12 years'),
+(4, 'Amoxicillin 250mg/5ml Suspension', 120, '5ml every 8 hours for 5-7 days (or as directed)', 'antibiotic', 'other', 40, 'HealWell Pharma', 'AMOX-S20254', '2025-10-04', '20', 'Store in refrigerator after reconstitution; discard unused after 7 days', 'Shake well before use; not for patients with penicillin allergy'),
+(5, 'Ibuprofen 400mg', 90, '400mg every 8 hours if needed for pain/inflammation', 'analgesic', 'tablet', 60, 'Global Meds Ltd.', 'IBU-40211', '2027-06-15', '10', 'Store below 30C, away from sunlight', 'Avoid in patients with gastric ulcers or kidney disease'),
+(6, 'Azithromycin 500mg', 300, '500mg once daily for 3 days (as prescribed)', 'antibiotic', 'tablet', 50, 'CurePharma Pvt Ltd', 'AZI-50021', '2026-12-22', '8', 'Store at room temperature', 'Take on empty stomach; not for patients with liver disease'),
+(7, 'Cetirizine 10mg', 50, '10mg once daily (for allergy)', 'antihistamine', 'tablet', 90, 'MediLife Pharma', 'CET-10B99', '2027-03-11', '12', 'Keep in cool dry place', 'May cause drowsiness; avoid driving after dose'),
+(8, 'Metformin 500mg', 70, '500mg twice daily with meals', 'antidiabetic', 'tablet', 90, 'LifeCare Pharmaceuticals', 'MET-50045', '2029-01-25', '15', 'Store below 25C', 'Not for patients with severe kidney issues'),
+(9, 'Omeprazole 20mg', 85, '20mg once daily before breakfast', 'antacid', 'capsule', 75, 'HealthMax Labs', 'OME-20Z10', '2028-04-17', '18', 'Store in dry place', 'Do not crush or chew; swallow whole'),
+(10, 'Loratadine 10mg', 55, '10mg once daily (for allergies)', 'antihistamine', 'tablet', 120, 'CarePlus Pharma', 'LOR-10M55', '2026-09-05', '25', 'Store at room temperature', 'Non-drowsy alternative to cetirizine'),
+(11, 'Ciprofloxacin 500mg', 200, '500mg twice daily for 7-14 days (as directed)', 'antibiotic', 'tablet', 49, 'PharmaTrust', 'CIP-500C88', '2027-11-30', '10', 'Protect from light and moisture', 'Avoid dairy products during treatment'),
+(12, 'Salbutamol Inhaler 100mcg', 150, '1-2 puffs every 4-6 hours as needed', 'bronchodilator', 'inhaler', 20, 'BreathWell Pharma', 'SAL-INH102', '2026-05-12', '5', 'Store below 30C', 'Shake well before use; for asthma relief');
 
 -- --------------------------------------------------------
 
@@ -258,7 +276,11 @@ INSERT INTO `patient` (`id`, `user_id`, `dob`, `gender`, `cnic`, `address`, `con
 (3, 12, '2000-12-12', 'Male', '45105-2178121-7', 'lahore', '+923122121131', 'usamatariq@gmail.com'),
 (4, 12, '2000-12-12', 'Male', '4510521781217', 'lahore', '+923122121131', 'usamatariq@gmail.com'),
 (5, 15, '2025-04-27', 'Male', '45677-7766667-4', 'gujranwala', '03319979262', 'azeem_rashid@yahoo.com'),
-(6, 21, '2025-06-28', 'male', '48230-8823983-0', 'sdf', '03097628377', 'sdf@gmail.com');
+(6, 21, '2025-06-28', 'male', '48230-8823983-0', 'sdf', '03097628377', 'sdf@gmail.com'),
+(7, 23, '2002-12-11', 'female', '12345-1234567-1', '3CBI sethi colony Rahwali cantt Gujranwala', '03245676233', 'irshadoffc@gmail.com'),
+(8, 24, '2009-12-12', 'male', '12345-6789876-5', '3CBI sethi colony Rahwali cantt Gujranwala', '03245676233', 'irshadoffc@gmail.com'),
+(9, 0, '1212-12-12', 'male', '12345-6789876-5', '3CBI sethi colony Rahwali cantt Gujranwala', '03245676233', 'irshadoffc@gmail.com'),
+(10, 0, '2025-08-22', 'male', '12345-6789876-5', 'Qtr No 4/6 F6 Area near 4No. Tankei Aviation school Rahwali cantonment Gujranwal', '03275713110', 'irshadoffc@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -272,7 +294,7 @@ CREATE TABLE `prescription` (
   `patient_id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `vitals` text NOT NULL,
-  `lab_investigation` text NOT NULL,
+  `lab_investigation` varchar(255) DEFAULT NULL,
   `notes` text NOT NULL,
   `prescription` text NOT NULL,
   `date` date NOT NULL
@@ -284,8 +306,14 @@ CREATE TABLE `prescription` (
 
 INSERT INTO `prescription` (`id`, `appointment_id`, `patient_id`, `doctor_id`, `vitals`, `lab_investigation`, `notes`, `prescription`, `date`) VALUES
 (1, 4, 3, 2, 'BP 110/70\r\nPulse 88/ Min\r\nWeight 79', 'CBC', 'Meat', 'Aspirin 500 mg (Twice a day)\nParacetamol 250 mg (Once a day)', '2025-02-15'),
-(2, 17, 3, 2, '', '', '', 'risik 10mg\r\nbiosilp 10mg\r\nfolic acid 10mg\r\n', '2025-04-30'),
-(3, 21, 3, 6, '', '', '', 'panadol', '2025-05-04');
+(2, 17, 3, 2, '', NULL, '', 'risik 10mg\r\nbiosilp 10mg\r\nfolic acid 10mg\r\n', '2025-04-30'),
+(3, 21, 3, 6, '', NULL, '', 'panadol', '2025-05-04'),
+(4, 30, 7, 2, '', NULL, 'Admitted', '1.Anti Biotic Injections \n2.Pain killers arttifin', '2025-08-22'),
+(5, 32, 7, 2, '', NULL, '', '1.Risik 10mg qt 10', '2025-08-23'),
+(6, 23, 3, 2, '', NULL, '', '1. Biosilp 10mg Qt 5.', '2025-08-23'),
+(7, 18, 3, 2, '', NULL, '', '1.Folic acid 10mg Qt 4.', '2025-08-23'),
+(8, 31, 23, 6, '', NULL, '', '1. Paracetamol 500mg (500mg (Take 1 tablet every 6 hours if needed for pain or fever)) - Qty: 10\n2. Amoxicillin 250mg/5ml Suspension (5ml every 8 hours for 5-7 days (or as directed)) - Qty: 10\n', '2025-08-23'),
+(9, 29, 7, 6, '', NULL, '', '1. Ciprofloxacin 500mg (500mg twice daily for 7-14 days (as directed)) - Qty: 1\n', '2025-08-23');
 
 -- --------------------------------------------------------
 
@@ -307,9 +335,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `role`) VALUES
 (1, 'Irshad Ali', 'Admin', '12345', 'admin'),
-(2, 'Dr. Munazza Zahoor', 'drmunaza809', '12345', 'doctor'),
-(3, 'Muhammad Zeeshan ali khan', 'patient', '12345', 'patient'),
-(6, 'Dr. Sadia Sarwar', 'sadia', '123456', 'doctor'),
+(2, 'Dr. Munazza Zahoor', 'doctor', '12345', 'doctor'),
+(3, 'Zeeshan ali', 'patient', '12345', 'patient'),
+(6, 'Dr. Sadia Sarwar', 'sadia', '12345', 'doctor'),
 (7, 'Sidra Batool', 'sidra123', '12345', 'patient'),
 (8, 'Dr. Mehtab Ali', 'mehtab', '12345', 'doctor'),
 (9, 'Dr.Ayesha Khan', 'ayesha123', '12345', 'doctor'),
@@ -320,9 +348,10 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`, `role`) VALUES
 (15, 'ali', 'ali', '12345', 'patient'),
 (16, 'ali ahmed', 'ahmed', '12345', 'patient'),
 (17, 'Ibtihaj', '1234', '1234', 'patient'),
-(18, 'Haseeb Ahmad', 'haseeb2342', '123456', 'pharmacist'),
+(18, 'Haseeb Ahmad', 'pharmacist', '12345', 'pharmacist'),
 (21, 'tet', 'sdf', 'sdf', 'patient'),
-(22, 'Samiullah', 'samiullah324', '12345', 'receptionist');
+(22, 'Samiullah', 'receptionist', '12345', 'receptionist'),
+(23, 'Amina ', 'amina', '12345', 'patient');
 
 --
 -- Indexes for dumped tables
@@ -386,7 +415,8 @@ ALTER TABLE `prescription`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -402,7 +432,7 @@ ALTER TABLE `admin_patient`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `billing`
@@ -432,25 +462,25 @@ ALTER TABLE `doctor`
 -- AUTO_INCREMENT for table `medication`
 --
 ALTER TABLE `medication`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

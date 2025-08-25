@@ -51,4 +51,31 @@ $patient=mysqli_fetch_array($result);
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </aside>
-        
+            <div class="dashboard-header">
+        <h1>Medical Dashboard</h1>
+        <div class="user-info">
+            <div class="user-avatar"><?php 
+            $sql="select * from patient where user_id='".$patient['id']."'";
+            $result=mysqli_query($con,$sql);
+            $profile=mysqli_fetch_array($result);
+
+            
+            if(!empty($profile['profile'])) {
+                echo '<img src="../image/'.$profile['profile'].'" alt="Profile Image" style="width:40px; height:40px; border-radius:50%;">';
+            } else {
+                echo '<i class="fas fa-user-circle" style="font-size:40px;"></i>';
+            }
+            
+            ?></div>
+            <div>
+                <div>Patient Portal</div>
+                <?php
+               
+                ?>
+                <div>Welcome, <?php echo $patient['name']; ?></div>
+            </div>
+        </div>
+    </div>
+        </body>
+
+        </html>

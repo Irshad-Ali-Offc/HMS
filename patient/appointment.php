@@ -3,7 +3,7 @@ include 'header.php';
 ?>
         
         <main class="main-content">
-             
+             <div class="dashboard-section">
             <section id="appointments-section">
                 <h2>Appointment History</h2>
                 <table>
@@ -49,6 +49,7 @@ include 'header.php';
             </section>
             
         </main>
+        </div>
     </div>
 
 

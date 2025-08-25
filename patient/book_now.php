@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
         $pp_Amount = $amount; // Amount in paisa 
         $pp_TxnDateTime = date('YmdHis');
         $pp_ExpiryDateTime = date('YmdHis', strtotime('+1 hour'));
-        $pp_ReturnURL = "http://localhost/hms/patient/booking_complete.php"; // Change it accordingly
+        $pp_ReturnURL = "http://localhost/final/hms/patient/booking_complete.php"; // Change it accordingly
 
         $data = array(
             "pp_Version" => "1.1",
