@@ -94,18 +94,17 @@
                   <select name="doctor" id="doctor" required>
                     <option value="" disabled selected>Select a doctor</option>
                   </select>
-        <label>Patient</label>
-                  <select name="patient" id="patient" required>
-                    <option value="" disabled selected>Select a patient</option>
-                      <?php
-                      $sql="select users.name, patient.id from patient INNER JOIN users on users.id=patient.user_id";
-                      $result=mysqli_query($con,$sql);
-                      while($row=mysqli_fetch_array($result)){
-                      ?>
-                    <option value="<?php echo $row['id'];?>"><?php echo $row['name'];?></option>
-                      <?php } ?>
-                  </select>
-            <input type="text" name="name" id="name" value="" hidden placeholder="Patient Name">
+       
+       <label>Patient CNIC</label>
+       <input type="text" name="cnic" id="cnic" required placeholder="Enter CNIC">
+
+
+       
+       <label>Patient Name</label>
+       <input type="text" name="patient_name" id="patient-name" readonly placeholder="Patient Name">
+
+       
+       <input type="hidden" name="patient_id" id="patient-id">
            <label for="date">Appointment Date:</label>
 <input type="date" id="date" name="date" 
        min="<?php echo date('Y-m-d'); ?>" required 
@@ -124,14 +123,26 @@
 </html>
 <?php
 if(isset($_POST['submit'])){
+    $cnic=$_POST['cnic'];
+    $sql="select * from patient where cnic='$cnic'";
+    $result=mysqli_query($con,$sql);
+    $row=mysqli_fetch_array($result);
+    if(!$row){
+        echo '<script>alert("No patient found with this CNIC")</script>';
+        exit;
+    }
+    else{
+        $patient_id=$row['user_id'];
+    }
+
     $doctor=$_POST['doctor']; 
-    $patient=$_POST['patient']; 
-    $name=$_POST['name']; 
+    
+    $patient_name=$_POST['patient_name']; 
     $date=$_POST['date']; 
     $time=$_POST['time']; 
     $fee=$_POST['fee']; 
     $added=date('Y-m-d');
-    $sql="insert into appointment values('','$doctor','$patient','$name','$added','$date','$time','$fee','','Complete','Pending')";
+    $sql="insert into appointment values('','$doctor','$patient_id','$patient_name','$added','$date','$time','$fee','','Complete','Pending')";
 	$result=mysqli_query($con,$sql);
 	if($result){
 		echo '<script>window.location.href="appointment.php"
@@ -169,11 +180,11 @@ $(document).ready(function(){
             url:'ajaxData.php',
             data:{doctor: doctor},
             success:function(fee){
-                $('#fee').val(fee); // ← set input value
+                $('#fee').val(fee); 
             }
         });
     }else{
-        $('#fee').val(''); // ← clear fee if no doctor selected
+        $('#fee').val(''); 
     }
 });
 $('#patient').on('change', function(){
@@ -184,13 +195,37 @@ $('#patient').on('change', function(){
             url:'ajaxData.php',
             data:{patient: patient},
             success:function(name){
-                $('#name').val(name); // ← set input value
+                $('#name').val(name); 
             }
         });
     }else{
-        $('#name').val(''); // ← clear fee if no doctor selected
+        $('#name').val(''); 
     }
 });
     
+});
+</script>
+<script>
+$(document).ready(function() {
+    $('#cnic').on('blur', function() {
+        var cnic = $(this).val();
+
+        if (cnic !== '') {
+            $.ajax({
+                url: 'get_patient.php',
+                type: 'POST',
+                data: { cnic: cnic },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.error) {
+                        alert(response.error);
+                        $('#patient-name').val('');
+                    } else {
+                        $('#patient-name').val(response.name);
+                    }
+                }
+            });
+        }
+    });
 });
 </script>

@@ -12,7 +12,7 @@ if(mysqli_num_rows($result)<1){
 
         
         <main class="main-content">
-             
+             <div class="dashboard-section" style="height: autp;">
             <section id="profile-section">
             <?php
 			$sql="select patient.*, users.name, username, password from patient INNER JOIN users ON users.id=patient.user_id where user_id='".$patient['id']."'";
@@ -42,14 +42,15 @@ if(mysqli_num_rows($result)<1){
                     <textarea name="address" rows="3" required readonly placeholder="Enter address"><?php echo $row['address'];?></textarea>
 
                     <label>Date:</label>
-                    <input type="date" name="date" min="<?php echo date('Y-m-d');?>" required>
+                    <input type="date" name="date" min="<?php echo date('Y-m-d');?>" required onclick="this.showPicker()" onfocus="this.showPicker()">
 
                     <label>Time:</label>
-                    <input type="time" name="time" min="9:00" max="18:00" required>
+                    <input type="time" name="time" min="9:00" max="18:00" required onclick="this.showPicker()" onfocus="this.showPicker()">
 
-                    <button type="submit" name="submit">Appoint Now</button>
+                    <button type="submit" name="submit" style="display: flex; justify-content:center">Appoint Now</button>
                 </form>
             </section>
+</div>
             
         </main>
     </div>
