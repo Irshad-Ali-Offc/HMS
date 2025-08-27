@@ -45,7 +45,7 @@ $row=mysqli_fetch_array($result);
 
        
         <main class="main-content">
-             
+             <div class="dashboard-section">
             <section id="doctor-section">
                 <div class="image-container">
                 	<img src="../image/<?php echo $row['image'];?>" class="doctor-image">
@@ -64,7 +64,7 @@ $row=mysqli_fetch_array($result);
                 </div>
                 <p><?php echo $row['about'];?></p>
             </section>
-            
+</div>
         </main>
     </div>
 

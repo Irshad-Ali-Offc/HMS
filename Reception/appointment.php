@@ -310,7 +310,7 @@ include 'navbar.php';
 				  }
 				  else{
 				  $sql="select appointment.*, users.name as doctor_name, address from appointment INNER JOIN users on users.id=appointment.doctor_id INNER JOIN patient on appointment.patient_id=patient.id ORDER BY appointment.id DESC";
-				  }
+ 				  }
 				  $result=mysqli_query($con,$sql);
 				  if(mysqli_num_rows($result)>0){
 				  while($row=mysqli_fetch_array($result)){

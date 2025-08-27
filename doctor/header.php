@@ -55,7 +55,7 @@ $doctor = mysqli_fetch_array($result);
       echo '<a href="profile.php"><img src="../image/userlogo.png" alt="User Icon" class="user-icon"></a>';
    }
    ?>
-              
+            
             </li>
          </ul>
       </nav>

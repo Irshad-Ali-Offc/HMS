@@ -154,7 +154,7 @@
                             <label for="patient-name">Patient Name:</label>
                             <input type="text" id="patient-name" name="fullname" class="form-control"
                                 placeholder="Enter full name" pattern="[A-Za-z ]+"
-                                title="Only letters and spaces are allowed" required>
+                                title="Only letters and spaces are allowed" required readonly>
                         </div>
                         <div class="form-group">
                             <label for="admission-date">Admission Date</label>

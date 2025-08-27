@@ -21,6 +21,8 @@ include 'header.php';
                     <?php
 					$i=1;
 					$sql="select appointment.*, users.name from appointment INNER JOIN users on users.id=appointment.doctor_id where patient_id='".$patient['id']."' ORDER BY appointment.id desc";
+  
+
 					$result=mysqli_query($con,$sql);
 					while($row=mysqli_fetch_array($result)){
 					?>

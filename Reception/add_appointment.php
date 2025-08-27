@@ -106,11 +106,13 @@
                       <?php } ?>
                   </select>
             <input type="text" name="name" id="name" value="" hidden placeholder="Patient Name">
-            <label for="date">Appointment Date:</label>
-            <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" required>
-      
+           <label for="date">Appointment Date:</label>
+<input type="date" id="date" name="date" 
+       min="<?php echo date('Y-m-d'); ?>" required 
+       onclick="this.showPicker()" onfocus="this.showPicker()">
+
             <label for="time">Appointment Time:</label>
-            <input type="time" id="time" name="time" min="09:00" max="18:00" required>
+            <input type="time" id="time" name="time" min="09:00" max="18:00" required   onclick="this.showPicker()" onfocus="this.showPicker()">
             <label for="fee">Consultation Fee:</label>
         <input type="text" name="fee" id="fee" value="" readonly placeholder="Consultation Fee">
 
