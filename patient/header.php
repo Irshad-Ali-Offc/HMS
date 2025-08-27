@@ -76,6 +76,11 @@ $patient=mysqli_fetch_array($result);
             </div>
         </div>
     </div>
+
+    
+    <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/08/27/15/20250827153349-ZUEYLTT1.js" defer></script>
+    
         </body>
 
         </html>
